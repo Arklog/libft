@@ -1,0 +1,7 @@
+#include "libft.h"
+
+int main() 
+{
+	int	i = ft_countcs("abcd", "ab"); // i = 2
+	i = ft_countcs("abcdefa", "ab"); // i = 3
+}

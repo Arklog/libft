@@ -2,3 +2,5 @@ libftTester
 libft.a
 *.o
 .vscode
+html
+latex

@@ -1,3 +1,4 @@
 libftTester
 libft.a
 *.o
+.vscode

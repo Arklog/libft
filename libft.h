@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/01 18:05:01 by pierre            #+#    #+#             */
+/*   Updated: 2023/02/01 18:17:19 by pierre           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -46,6 +58,14 @@ int		ft_isalpha(int c);
 int		ft_isalphastr(const char *str);
 
 /**
+ * @brief Return the uppercase equivalent of c
+ * 
+ * @param c 
+ * @return The uppercase equivalent of c if c is lowercase, else return c
+ */
+int		ft_toupper(int c);
+
+/**
  * Return the number of character into the null terminated string str
  * 
  * @param	str	the string
@@ -71,6 +91,32 @@ size_t	ft_strlen(const char *str);
 size_t	ft_strnlen(const char *str, size_t n);
 
 /**
+ * Return a pointer to the first occurence of c in str
+ * 
+ * @param	str	the string to search in
+ * @param	c	the character to search for
+ * 
+ * @return		a pointer over the first occurence of c in str
+ * 
+ * @warning		str must be null terminated
+ * @warning		str must not be null
+*/
+char	*ft_strchr(const char *str, int c);
+
+/**
+ * Return a pointer to the last occurence of c in str
+ * 
+ * @param	str	the string to search in
+ * @param	c	the character to search for
+ * 
+ * @return		a pointer over the last occurence of c in str
+ * 
+ * @warning		str must be null terminated
+ * @warning		str must not be null
+*/
+char	*ft_strrchr(const char *str, int c);
+
+/**
  * Copy n bytes from src to dest.
  * 
  * @param	dest	destination buffer
@@ -81,8 +127,19 @@ size_t	ft_strnlen(const char *str, size_t n);
  * 
  * @warning			source and dest must be at least n bytes long
  * @warning			null check are not performed
+ * @warning			memory must not overlap
 */
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+
+/**
+ * @brief Copy n bytes from src to dest, memory can overlap
+ * 
+ * @param dest 
+ * @param src 
+ * @param n 
+ * @return void* 
+ */
+void	*ft_memmove(void *dest, const void *src, size_t n);
 
 /**
  * Set the first n bytes of dest to the value v.
@@ -133,5 +190,6 @@ char	*ft_splitcs(const char *str, const char *charset);
 char	*ft_splitc(const char *str, int c);
 
 char	*ft_split(const char *str);
+
 
 #endif

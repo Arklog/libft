@@ -1,7 +1,9 @@
 SRC := src/ft_memcpy.c \
+		src/ft_memmove.c \
 		src/ft_memset.c \
 		src/ft_isdigit.c \
 		src/ft_isalpha.c \
+		src/ft_toupper.c \
 		src/ft_strlen.c
 SRC := ${SRC:%.c=$(shell pwd)/%.o}
 OBJ := $(SRC:.c=.o)

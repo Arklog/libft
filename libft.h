@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:05:01 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/01 18:17:19 by pierre           ###   ########.fr       */
+/*   Updated: 2023/02/02 23:14:14 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,11 +185,21 @@ size_t	ft_countc(const char *str, int c);
 */
 size_t	ft_countcs(const char *str, const char *charset);
 
-char	*ft_splitcs(const char *str, const char *charset);
+/**
+ * @brief Create a new string from the concatenation of s1 and s2
+ * 
+ * @param s1 
+ * @param s2 
+ * @return s1 + s2 or null in case of error 
+ * 
+ * @warning s1 and s2 must not be null
+ */
+char	*ft_strcat(const char *s1, const char *s2);
 
-char	*ft_splitc(const char *str, int c);
+char	**ft_splitcs(const char *str, const char *charset);
 
-char	*ft_split(const char *str);
+char	**ft_splitc(const char *str, int c);
 
+char	**ft_split(const char *str);
 
 #endif

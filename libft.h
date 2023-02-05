@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:05:01 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/02 23:14:14 by pierre           ###   ########.fr       */
+/*   Updated: 2023/02/03 18:52:02 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,5 +201,7 @@ char	**ft_splitcs(const char *str, const char *charset);
 char	**ft_splitc(const char *str, int c);
 
 char	**ft_split(const char *str);
+
+void	ft_putstrfd(const char *str, int fd);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:05:01 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/07 17:56:48 by pierre           ###   ########.fr       */
+/*   Updated: 2023/02/07 18:07:52 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,7 +205,6 @@ size_t	ft_countc(const char *str, int c);
 */
 size_t	ft_countcs(const char *str, const char *charset);
 
-<<<<<<< HEAD
 /**
  * @brief Create a new string from the concatenation of s1 and s2
  * 
@@ -217,14 +216,8 @@ size_t	ft_countcs(const char *str, const char *charset);
  */
 char	*ft_strcat(const char *s1, const char *s2);
 
-char	**ft_splitcs(const char *str, const char *charset);
-
-char	**ft_splitc(const char *str, int c);
-
-char	**ft_split(const char *str);
-
 void	ft_putstrfd(const char *str, int fd);
-=======
+
 char	**ft_splitcs(const char *str, const char *charset);
 
 char	**ft_split(const char *str, int c);
@@ -240,6 +233,5 @@ int		ft_lstsize(t_list	*lst);
 t_list	*ft_lstlast(t_list	*lst);
 
 int		ft_lstiteri(t_list *lst, int (*f)(size_t i, void *content));
->>>>>>> 7190787 (update)
 
 #endif

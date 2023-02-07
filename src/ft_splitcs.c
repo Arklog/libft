@@ -58,11 +58,13 @@ static t_word	*allocate_word(const char **str, const char *charset)
 
 static t_list	*create_words(const char *str, const char *charset)
 {
-	t_word	*new;
-	t_list	*lst;
+	t_word		*new;
+	t_list		*lst;
+	const char	*end;
 
+	end = str + ft_strlen(str);
 	lst = NULL;
-	while (*str)
+	while (str < end)
 	{
 		if (!ft_strchr(charset, *str))
 		{

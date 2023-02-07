@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 18:27:58 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/05 18:27:59 by pierre           ###   ########.fr       */
+/*   Created: 2023/02/05 23:31:43 by pierre            #+#    #+#             */
+/*   Updated: 2023/02/05 23:35:14 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_countc(const char *str, int c)
+char	*ft_strdup(const char *str)
 {
+	char	*new;
 	size_t	i;
-	size_t	count;
 
 	i = ft_strlen(str);
-	count = 0;
-	while (i--)
-		if (c == str[i])
-			++count;
-	return (count);
+	new = malloc(i + 1);
+	if (!new)
+		return (NULL);
+	ft_memcpy(new, str, i);
+	new[i] = 0;
+	return (new);
 }
 
-size_t	ft_countcs(const char *str, const char *charset)
+char	*ft_strndup(const char *str, size_t n)
 {
+	char	*new;
 	size_t	i;
-	size_t	count;
 
-	i = ft_strlen(charset);
-	count = 0;
-	while (i--)
-		count += ft_countc(str, charset[i]);
-	return (count);
+	i = ft_strlen(str);
+	if (n < i)
+		i = n;
+	new = malloc(i + 1);
+	if (!new)
+		return (NULL);
+	ft_memcpy(new, str, i);
+	new[i] = 0;
+	return (new);
 }

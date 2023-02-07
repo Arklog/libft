@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:05:01 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/03 18:52:02 by pierre           ###   ########.fr       */
+/*   Updated: 2023/02/07 17:56:48 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define LIBFT_H
 
 # include <sys/types.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+typedef struct s_list {
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 /**
  * Check if a given character is a digit
@@ -91,6 +98,15 @@ size_t	ft_strlen(const char *str);
 size_t	ft_strnlen(const char *str, size_t n);
 
 /**
+ * @brief Allocate a new string being the concatenation of s1 and s2
+ * 
+ * @param s1 
+ * @param s2 
+ * @return The new string on succes or NULL on error
+ */
+char	*ft_strcat(const char *s1, const char *s2);
+
+/**
  * Return a pointer to the first occurence of c in str
  * 
  * @param	str	the string to search in
@@ -115,6 +131,10 @@ char	*ft_strchr(const char *str, int c);
  * @warning		str must not be null
 */
 char	*ft_strrchr(const char *str, int c);
+
+char	*ft_strdup(const char *str);
+
+char	*ft_strndup(const char *str, size_t n);
 
 /**
  * Copy n bytes from src to dest.
@@ -185,6 +205,7 @@ size_t	ft_countc(const char *str, int c);
 */
 size_t	ft_countcs(const char *str, const char *charset);
 
+<<<<<<< HEAD
 /**
  * @brief Create a new string from the concatenation of s1 and s2
  * 
@@ -203,5 +224,22 @@ char	**ft_splitc(const char *str, int c);
 char	**ft_split(const char *str);
 
 void	ft_putstrfd(const char *str, int fd);
+=======
+char	**ft_splitcs(const char *str, const char *charset);
+
+char	**ft_split(const char *str, int c);
+
+t_list	*ft_lstnew(void *content);
+
+void	ft_lstaddfront(t_list **lst, t_list *new);
+
+void	ft_lstaddback(t_list **lst, t_list *new);
+
+int		ft_lstsize(t_list	*lst);
+
+t_list	*ft_lstlast(t_list	*lst);
+
+int		ft_lstiteri(t_list *lst, int (*f)(size_t i, void *content));
+>>>>>>> 7190787 (update)
 
 #endif

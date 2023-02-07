@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 18:27:58 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/05 18:27:59 by pierre           ###   ########.fr       */
+/*   Created: 2023/02/05 23:46:13 by pierre            #+#    #+#             */
+/*   Updated: 2023/02/05 23:47:26 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_countc(const char *str, int c)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	size_t	count;
+	t_list	*new;
 
-	i = ft_strlen(str);
-	count = 0;
-	while (i--)
-		if (c == str[i])
-			++count;
-	return (count);
-}
-
-size_t	ft_countcs(const char *str, const char *charset)
-{
-	size_t	i;
-	size_t	count;
-
-	i = ft_strlen(charset);
-	count = 0;
-	while (i--)
-		count += ft_countc(str, charset[i]);
-	return (count);
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	ft_memset(new, 0, sizeof(t_list));
+	new->content = content;
+	return (new);
 }

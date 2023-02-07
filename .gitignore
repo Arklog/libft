@@ -5,3 +5,7 @@ libft.a
 html
 latex
 .ccls-cache
+test
+test_split.c
+libft-war-machine
+.gdb_history

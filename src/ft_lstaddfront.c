@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countc.c                                        :+:      :+:    :+:   */
+/*   ft_lstaddfront.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 18:27:58 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/05 18:27:59 by pierre           ###   ########.fr       */
+/*   Created: 2023/02/05 23:48:13 by pierre            #+#    #+#             */
+/*   Updated: 2023/02/05 23:51:21 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_countc(const char *str, int c)
+void	ft_lstaddfront(t_list **lst, t_list *new)
 {
-	size_t	i;
-	size_t	count;
+	t_list	*tmp;
 
-	i = ft_strlen(str);
-	count = 0;
-	while (i--)
-		if (c == str[i])
-			++count;
-	return (count);
-}
-
-size_t	ft_countcs(const char *str, const char *charset)
-{
-	size_t	i;
-	size_t	count;
-
-	i = ft_strlen(charset);
-	count = 0;
-	while (i--)
-		count += ft_countc(str, charset[i]);
-	return (count);
+	tmp = *lst;
+	new->next = tmp;
+	*lst = new;
 }

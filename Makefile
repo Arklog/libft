@@ -1,17 +1,29 @@
-SRC := src/ft_memcpy.c \
+SRC :=	src/ft_countc.c \
+		src/ft_isalpha.c \
+		src/ft_isdigit.c \
+		src/ft_lstaddback.c \
+		src/ft_lstaddfront.c \
+		src/ft_lstiteri.c \
+		src/ft_lstlast.c \
+		src/ft_lstnew.c \
+		src/ft_lstsize.c \
+		src/ft_memcpy.c \
 		src/ft_memmove.c \
 		src/ft_memset.c \
-		src/ft_isdigit.c \
-		src/ft_isalpha.c \
-		src/ft_toupper.c \
-		src/ft_strlen.c
+		src/ft_split.c \
+		src/ft_splitcs.c \
+		src/ft_strcat.c \
+		src/ft_strchr.c \
+		src/ft_strdup.c \
+		src/ft_strlen.c \
+		src/ft_toupper.c
 SRC := ${SRC:%.c=$(shell pwd)/%.o}
 OBJ := $(SRC:.c=.o)
 
 NAME := libft
 
 CC := gcc
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -g
 INC := -I.
 
 .NOTPARALLEL: prepare_a prepare_so
@@ -54,3 +66,6 @@ prepare_so:
 		make -C . fclean; \
 		make -C . soobjs; \
 	fi
+
+test: test_split.c all
+	${CC} ${CFLAGS} ${INC} $< -L. -lft -o $@

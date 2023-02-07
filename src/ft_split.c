@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countc.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 18:27:58 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/05 18:27:59 by pierre           ###   ########.fr       */
+/*   Created: 2023/02/05 23:26:55 by pierre            #+#    #+#             */
+/*   Updated: 2023/02/05 23:30:02 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_countc(const char *str, int c)
+char	**ft_split(const char *str, int c)
 {
-	size_t	i;
-	size_t	count;
+	char	charset[2];
 
-	i = ft_strlen(str);
-	count = 0;
-	while (i--)
-		if (c == str[i])
-			++count;
-	return (count);
-}
-
-size_t	ft_countcs(const char *str, const char *charset)
-{
-	size_t	i;
-	size_t	count;
-
-	i = ft_strlen(charset);
-	count = 0;
-	while (i--)
-		count += ft_countc(str, charset[i]);
-	return (count);
+	charset[0] = c;
+	charset[1] = 0;
+	return (ft_splitcs(str, charset));
 }

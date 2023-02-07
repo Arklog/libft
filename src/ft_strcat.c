@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countc.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 18:27:58 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/05 18:27:59 by pierre           ###   ########.fr       */
+/*   Created: 2023/02/07 17:48:58 by pierre            #+#    #+#             */
+/*   Updated: 2023/02/07 17:51:26 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_countc(const char *str, int c)
+char	*ft_strcat(const char *s1, const char *s2)
 {
-	size_t	i;
-	size_t	count;
+	size_t	n1;
+	size_t	n2;
+	char	*new;
 
-	i = ft_strlen(str);
-	count = 0;
-	while (i--)
-		if (c == str[i])
-			++count;
-	return (count);
-}
-
-size_t	ft_countcs(const char *str, const char *charset)
-{
-	size_t	i;
-	size_t	count;
-
-	i = ft_strlen(charset);
-	count = 0;
-	while (i--)
-		count += ft_countc(str, charset[i]);
-	return (count);
+	n1 = ft_strlen(s1);
+	n2 = ft_strlen(s2);
+	new = malloc(n1 + n2 + 1);
+	if (!new)
+		return (NULL);
+	new[n1 + n2] = 0;
+	ft_memcpy(new, s1, n1);
+	ft_memcpy(new + n1, s2, n2);
+	return (new);
 }

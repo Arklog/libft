@@ -10,6 +10,7 @@ SRC :=	src/ft_countc.c \
 		src/ft_memcpy.c \
 		src/ft_memmove.c \
 		src/ft_memset.c \
+		src/ft_putstrfd.c \
 		src/ft_split.c \
 		src/ft_splitcs.c \
 		src/ft_strcat.c \

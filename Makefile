@@ -17,7 +17,8 @@ SRC :=	src/ft_countc.c \
 		src/ft_strchr.c \
 		src/ft_strdup.c \
 		src/ft_strlen.c \
-		src/ft_toupper.c
+		src/ft_toupper.c \
+		src/ft_strcmp.c
 SRC := ${SRC:%.c=$(shell pwd)/%.o}
 OBJ := $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:05:01 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/07 18:07:52 by pierre           ###   ########.fr       */
+/*   Updated: 2023/03/15 21:29:53 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,10 @@ size_t	ft_strlen(const char *str);
  * @warning		str must not be null
 */
 size_t	ft_strnlen(const char *str, size_t n);
+
+int		ft_strcmp(const char *s1, const char *s2);
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /**
  * @brief Allocate a new string being the concatenation of s1 and s2

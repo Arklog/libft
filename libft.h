@@ -72,30 +72,9 @@ int		ft_isalphastr(const char *str);
  */
 int		ft_toupper(int c);
 
-/**
- * Return the number of character into the null terminated string str
- * 
- * @param	str	the string
 
- * @return		the number of character in the string
 
- * @warning		str must be null-terminated
- * @warning		str must not be null
-*/
-size_t	ft_strlen(const char *str);
 
-/**
- * Return the number of character into the null terminated string str
- * 
- * @param	str	the string
- * @param	n	the maximum number of characters to count
-
- * @return		the number of character in the string
-
- * @warning		str must be null-terminated
- * @warning		str must not be null
-*/
-size_t	ft_strnlen(const char *str, size_t n);
 
 int		ft_strcmp(const char *s1, const char *s2);
 

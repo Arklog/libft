@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_powi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 15:21:43 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/06 15:34:56 by pierre           ###   ########.fr       */
+/*   Created: 2023/05/07 20:31:10 by pierre            #+#    #+#             */
+/*   Updated: 2023/05/07 20:33:07 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_math.h"
 
-size_t	ft_strlen(const char *str)
+int		ft_powi(int base, int power)
 {
-	size_t	i;
+	int	ret;
 
-	i = 0;
-	while (*str++)
-		++i;
-	return (i);
-}
-
-size_t	ft_strnlen(const char *str, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (n-- && *str++)
-		++i;
-	return (i);
+	if (!base)
+		return (0);
+	else if (power == 0)
+		return (1);
+	ret = base;
+	while (--power)
+		ret *= base;
+	return (ret);
 }

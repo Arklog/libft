@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 15:21:43 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/06 15:34:56 by pierre           ###   ########.fr       */
+/*   Created: 2023/05/06 16:54:39 by pierre            #+#    #+#             */
+/*   Updated: 2023/05/06 17:01:46 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "libft.h"
+#include <sys/types.h>
+#include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+int	main(void)
 {
-	size_t	i;
+	char		a[128] = {0};
+	u_int32_t	b;
+	int 		bw;
 
-	i = 0;
-	while (*str++)
-		++i;
-	return (i);
-}
+	ft_memset(a, 'a', 127);
+	a[0] = 0;
+	b = *((u_int32_t *)a);
+	ft_putstrfd(a, 1);
+	printf("%u", b);
 
-size_t	ft_strnlen(const char *str, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (n-- && *str++)
-		++i;
-	return (i);
+	bw = `	q1
 }

@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:22:26 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 16:39:53 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 17:50:08 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ long	ft_strtol(const char *str, char **endptr, int base)
 		_base = g_base_16;
 	else
 		return (0);
-	negative = 0;
+	negative = 1;
 	if (str[0] == '-')
-		negative = (int)(*(str++));
+		negative = -1 * ((++str) != NULL);
 	result = 0;
 	i = 0;
 	while (ft_strlen(str))

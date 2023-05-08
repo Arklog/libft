@@ -5,3 +5,4 @@ file(GLOB SRC src/**.c src/*.c)
 include_directories(./)
 
 add_library(ft ${SRC})
+add_compile_options(ft g Wall Werror Wextra)

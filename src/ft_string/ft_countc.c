@@ -6,11 +6,10 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 18:27:58 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 14:21:01 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 16:36:19 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_string.h"
 
 size_t	ft_countc(const char *str, int c)

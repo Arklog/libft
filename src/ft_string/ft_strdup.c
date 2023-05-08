@@ -6,11 +6,11 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 23:31:43 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/05 23:35:14 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 16:36:54 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 char	*ft_strdup(const char *str)
 {

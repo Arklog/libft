@@ -6,11 +6,11 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:07:57 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/06 19:05:22 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 16:36:31 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

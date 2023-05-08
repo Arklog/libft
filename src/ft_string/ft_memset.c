@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 15:21:53 by pierre            #+#    #+#             */
-/*   Updated: 2023/01/22 15:21:56 by pierre           ###   ########.fr       */
+/*   Created: 2023/01/22 15:21:47 by pierre            #+#    #+#             */
+/*   Updated: 2023/05/08 16:36:37 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memset(void *dest, int c, size_t n)
 {
-	size_t	i;
+	size_t		i;
+	u_int64_t	v64;
 
+	v64 = 0x0101010101010101 * (u_int8_t)c;
 	i = n / sizeof(u_int64_t);
 	while (i--)
-		*((u_int64_t *)dest + i) = *((const u_int64_t *)src + i);
-	i = n % sizeof(u_int64_t);
+		*((u_int64_t *)dest + i) = v64;
+	i = n % (sizeof(u_int64_t));
 	while (i--)
-		*((u_int8_t *)dest + n - i - 1) = *((const u_int8_t *)src + n - i - 1);
+		*((u_int8_t *)dest + n - 1 - i) = (u_int8_t)c;
 	return (dest);
 }

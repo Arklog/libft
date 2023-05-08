@@ -6,14 +6,13 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:22:26 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 14:17:14 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 16:39:53 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stdlib.h"
 #include "ft_string.h"
 #include "ft_math.h"
-#include "libft.h"
 
 static const char	*g_base_8 = "01234567";
 static const char	*g_base_10 = "0123456789";

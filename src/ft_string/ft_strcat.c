@@ -6,11 +6,11 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:48:58 by pierre            #+#    #+#             */
-/*   Updated: 2023/02/07 17:51:26 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 16:36:41 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 char	*ft_strcat(const char *s1, const char *s2)
 {

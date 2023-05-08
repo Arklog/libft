@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math.h                                          :+:      :+:    :+:   */
+/*   ft_absi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 20:30:17 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 22:02:35 by pierre           ###   ########.fr       */
+/*   Created: 2023/05/08 22:03:06 by pierre            #+#    #+#             */
+/*   Updated: 2023/05/08 22:03:24 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MATH_H
-#define FT_MATH_H
+//
+// Created by pierre on 08/05/23.
+//
+#include "ft_math.h"
 
-/**
- * Raise base to the power power
- * @param base		the base to be raised
- * @param power 	the power to which raise it
- * @return
- */
-int		ft_powi(int base, int power);
-
-/**
- * Return the absolute value of val
- *
- * @param val
- *
- * @return
- */
-unsigned int 	ft_absi(int val);
-
-#endif
+unsigned int	ft_absi(int val)
+{
+	if (val < 0)
+		return (-val);
+	else
+		return (val);
+}

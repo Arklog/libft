@@ -6,11 +6,12 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:57:30 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 14:07:46 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 14:09:36 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stdlib.h"
+#include "ft_string.h"
 
 int		ft_atoi(const char *str)
 {

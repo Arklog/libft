@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:05:01 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 14:19:32 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 14:21:08 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <sys/types.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "ft_string.h"
 
 typedef struct s_list {
 	void			*content;

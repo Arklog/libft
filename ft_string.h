@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 16:45:13 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 17:09:36 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_STRING_H
 
 # include <sys/types.h>
+# include <stdlib.h>
 
 /**
  * Return the number of character into the null terminated string str

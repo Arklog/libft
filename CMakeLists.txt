@@ -5,6 +5,7 @@ set(CMAKE_C_STANDARD 99)
 file(GLOB SRC src/**/*.c src/*.c)
 
 include_directories(./)
+add_compile_options(ft -g)
 
 add_library(ft ${SRC})
 

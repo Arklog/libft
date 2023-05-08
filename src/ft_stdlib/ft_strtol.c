@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:22:26 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/07 20:56:15 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 14:17:14 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static const char	*g_base_16 = "0123456789abcdef";
 
 long	ft_strtol(const char *str, char **endptr, int base)
 {
-	char	*_base;
-	long	result;
-	int		negative;
-	int		i;
+	const char	*_base;
+	long		result;
+	int			negative;
+	int			i;
 
 	*endptr = (char *)str;
 	if (base == 8)
@@ -37,7 +37,7 @@ long	ft_strtol(const char *str, char **endptr, int base)
 		return (0);
 	negative = 0;
 	if (str[0] == '-')
-		negative = *(str++);
+		negative = (int)(*(str++));
 	result = 0;
 	i = 0;
 	while (ft_strlen(str))

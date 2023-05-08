@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:22:26 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 17:50:08 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/08 21:49:38 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ long	ft_strtol(const char *str, char **endptr, int base)
 		result += (ft_strchr(_base, *(str++)) - _base) * ft_powi(base, i++);
 		++(*endptr);
 	}
-	return ((negative * -1) * result);
+	return (negative * result);
 }

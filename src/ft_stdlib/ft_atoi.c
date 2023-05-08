@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 16:54:39 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/07 20:59:18 by pierre           ###   ########.fr       */
+/*   Created: 2023/05/07 20:57:30 by pierre            #+#    #+#             */
+/*   Updated: 2023/05/08 14:07:46 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <sys/types.h>
-#include <stdio.h>
+#include "ft_stdlib.h"
 
-int	main(void)
+int		ft_atoi(const char *str)
 {
-	char		a[128] = {0};
-	u_int32_t	b;
-	int 		bw;
+	long	val;
+	char	*_restrict;
 
-	ft_memset(a, 'a', 127);
-	a[0] = 0;
-	b = *((u_int32_t *)a);
-	ft_putstrfd(a, 1);
-	printf("%u", b);
-	return (0);
+	val = ft_strtol(str, &_restrict, 10);
+	if (_restrict != str + ft_strlen(str))
+		return (0);
+	return ((int)val);
 }

@@ -8,6 +8,9 @@ include_directories(./)
 
 add_library(ft ${SRC})
 
+add_custom_target(depend)
+add_dependencies(ft)
+
 add_executable(test test.c)
 target_link_libraries(test ft)
 add_dependencies(test ft)

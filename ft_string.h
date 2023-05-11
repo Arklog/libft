@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 17:09:36 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/11 15:52:43 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,5 +179,17 @@ size_t	ft_countc(const char *str, int c);
  * @example			ft_countcs
  */
 size_t	ft_countcs(const char *str, const char *charset);
+
+/**
+ * Rotate the element of arr in the given direction
+ * 
+ * @param arr		the array to rotate
+ * @param direction	the direction and number of element in which to rotate
+ * @param n			the number of element to be rotated
+ * @param size		the size of one element
+ * 
+ * @warning			arr must not be NULL
+*/
+void	rotate(void *arr, int direction, size_t n, size_t size);
 
 #endif

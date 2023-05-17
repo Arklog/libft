@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 20:15:10 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/17 22:12:49 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/17 22:36:24 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ static void	r_clock(void *arr, int direction, size_t n, size_t size)
 	free(tmp);
 }
 
-static void r_rclock(void *arr, int direction, size_t n, size_t size)
+static void	r_rclock(void *arr, int direction, size_t n, size_t size)
 {
 	char	*tmp;
-	void	*juncture;
 
 	tmp = malloc(n * direction);
 	if (!tmp)
 		return ;
 	ft_memcpy(tmp, arr, direction * n);
-	ft_memmove(arr, arr + direction, (size - direction) * n);
+	ft_memmove(arr, arr + direction * n, (size - direction) * n);
 	ft_memcpy(arr + (size - direction) * n, tmp, direction * n);
 	free(tmp);
 }
+
 void	rotate(void *arr, int direction, size_t n, size_t size)
 {
 	int	dir;

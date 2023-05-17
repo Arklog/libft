@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 16:54:39 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/17 22:17:04 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/17 23:08:41 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	main(int argc, char **argv)
 	for (int i = 0; i < 10; ++i)
 		arr[i] = i;
 	print_arr(arr, 10);
-	rotate(arr, 1, sizeof(int), 10);
+	rotate(arr, 1, 10, sizeof (int));
 	print_arr(arr, 10);
-	rotate(arr, -2, sizeof (int), 10);
+	rotate(arr, -2, 10, sizeof(int));
 	print_arr(arr, 10);
 	return (0);
 }

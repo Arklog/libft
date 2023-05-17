@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/11 15:52:43 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/05/17 23:00:04 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ size_t	ft_countcs(const char *str, const char *charset);
  * 
  * @param arr		the array to rotate
  * @param direction	the direction and number of element in which to rotate
- * @param n			the number of element to be rotated
+ * @param n			the number of element in the array
  * @param size		the size of one element
  * 
  * @warning			arr must not be NULL

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:22:26 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 21:49:38 by pierre           ###   ########.fr       */
+/*   Updated: 2023/05/25 15:19:51 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,18 @@ static const char	*g_base_8 = "01234567";
 static const char	*g_base_10 = "0123456789";
 static const char	*g_base_16 = "0123456789abcdef";
 
+static char *set_base(int base)
+{
+	if (base == 8)
+		return (g_base_8);
+	else if (base == 10)
+		return (g_base_10);
+	else if (base == 16)
+		return (g_base_16);
+	else
+		return (NULL);
+}
+
 long	ft_strtol(const char *str, char **endptr, int base)
 {
 	const char	*_base;
@@ -25,21 +37,18 @@ long	ft_strtol(const char *str, char **endptr, int base)
 	int			negative;
 	int			i;
 
-	*endptr = (char *)str;
-	if (base == 8)
-		_base = g_base_8;
-	else if (base == 10)
-		_base = g_base_10;
-	else if (base == 16)
-		_base = g_base_16;
-	else
+	_base = set_base(base);
+	if (!_base)
 		return (0);
+	*endptr = (char *)str;
 	negative = 1;
 	if (str[0] == '-')
 		negative = -1 * ((++str) != NULL);
+	else if (str[0] == '+')
+		++str;
 	result = 0;
 	i = 0;
-	while (ft_strlen(str))
+	while (*str)
 	{
 		result += (ft_strchr(_base, *(str++)) - _base) * ft_powi(base, i++);
 		++(*endptr);

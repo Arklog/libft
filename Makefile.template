@@ -6,6 +6,7 @@ CFLAGS  := -Wall -Werror -Wextra -I.
 NAME    := libft.a
 
 all:    ${NAME}
+	
 
 ${NAME}: ${OBJ}
 	@ar rcs $@ ${OBJ}

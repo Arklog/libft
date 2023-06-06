@@ -18,6 +18,7 @@ SRC		:=	./src/ft_string/ft_strdup.c\
 			./src/ft_lstsize.c\
 			./src/ft_putstrfd.c\
 			./src/ft_lstnew.c\
+			./src/ft_math/ft_digitat.c\
 			./src/ft_math/ft_powi.c\
 			./src/ft_math/ft_absi.c\
 			./src/ft_splitcs.c\

@@ -1,4 +1,8 @@
-SRC		:=	./src/ft_string/ft_strdup.c\
+SRC		:=	./src/ft_btree/ft_btree_delete.c\
+			./src/ft_btree/ft_btree_foreach.c\
+			./src/ft_btree/ft_btree_foreachnd.c\
+			./src/ft_btree/ft_btree_create.c\
+			./src/ft_string/ft_strdup.c\
 			./src/ft_string/ft_strcmp.c\
 			./src/ft_string/ft_countc.c\
 			./src/ft_string/ft_strcat.c\
@@ -14,6 +18,7 @@ SRC		:=	./src/ft_string/ft_strdup.c\
 			./src/ft_split.c\
 			./src/ft_lstaddfront.c\
 			./src/ft_lstiteri.c\
+			./src/ft_bstree/ft_bstree_create.c\
 			./src/ft_lstlast.c\
 			./src/ft_lstsize.c\
 			./src/ft_putstrfd.c\

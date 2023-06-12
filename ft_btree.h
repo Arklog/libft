@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 01:24:35 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/07 01:28:15 by pierre           ###   ########.fr       */
+/*   Updated: 2023/06/12 18:00:31 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,43 @@ typedef struct ft_btree_node {
 	struct ft_btree_node	*second;
 }	t_ft_btree_node;
 
-t_ft_btree_node	ft_btree_create(void *content);
+/**
+ * Create a new binary tree
+ *
+ * @param content	the content of the first node
+ * @return
+ */
+t_ft_btree_node	*ft_btree_create(void *content, t_ft_btree_node_type type);
+
+/**
+ * Delete the given node and all subsequent children, children
+ * are removed first.
+ *
+ * @param tree
+ * @param f			a callback function to delete the content of each node,
+ * 					if f is null the content will not be freed (useful when
+ * 					using stack allocated values)
+ */
+void			ft_btree_delete(t_ft_btree_node *tree, void (*f)(void *));
+
+/**
+ * Execute f on the type and content of each node of tree (including
+ * the root), the nodes are passed from left to right and
+ * the upper nodes will be passed first
+ *
+ * @param tree
+ * @param f
+ */
+void			ft_btree_foreach(t_ft_btree_node *tree,
+					void (*f)(t_ft_btree_node_type, void *));
+
+/**
+ * Execute f on each node of tree (including the root), the nodes are passed from
+ * left to right and from top to bottom
+ * @param tree
+ * @param f
+ */
+void			ft_btree_foreachnd(t_ft_btree_node *tree,
+					void (*f)(t_ft_btree_node *));
 
 #endif

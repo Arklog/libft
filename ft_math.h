@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:30:17 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/26 18:54:55 by pierre           ###   ########.fr       */
+/*   Updated: 2023/06/12 22:32:14 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ int		ft_powi(int base, int power);
 unsigned int 	ft_absi(int val);
 
 /**
- * Store the n'th digit of val in d, return true on success or false on error
+ * Store the n'th digit of val in d, return the digit on success or 0 on failure
  *
  * @param val
  * @param d		a pointer to int used to store the digit
- * @param n		the position of the digit, 1 being the first one
- * @return		the n'th digit of val, or 0 if val contain less than n digit or if n < 1
+ * @param n		the position of the digit, 0 being the first one
+ *
+ * @return		the n'th digit of val, or 0 if val contain less than n digit or if n < 0
  */
 int		ft_digitat(int val, int *d, int n);
 

@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digitat.c                                       :+:      :+:    :+:   */
+/*   ft_btree_foreach.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 18:34:08 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/12 22:34:10 by pierre           ###   ########.fr       */
+/*   Created: 2023/06/12 17:52:22 by pierre            #+#    #+#             */
+/*   Updated: 2023/06/12 17:56:10 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ft_btree.h"
 
-int	ft_digitat(int val, int *d, int n)
+void	ft_btree_foreach(t_ft_btree_node *tree,
+	void (*f)(t_ft_btree_node_type, void *))
 {
-	int	i;
-
-	if (n < 0)
-		return (0);
-	else if (val < 0)
-		val *= -1;
-	i = 0;
-	while (i < n)
-	{
-		val /= 10;
-		++i;
-	}
-	if (d)
-		*d = val;
-	return (val);
+	if (!tree)
+		return ;
+	f(tree->type, tree->content);
+	ft_btree_foreach(tree->first, f);
+	ft_btree_foreach(tree->second, f);
 }

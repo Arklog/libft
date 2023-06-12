@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digitat.c                                       :+:      :+:    :+:   */
+/*   ft_btree_delete.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 18:34:08 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/12 22:34:10 by pierre           ###   ########.fr       */
+/*   Created: 2023/06/12 15:42:48 by pierre            #+#    #+#             */
+/*   Updated: 2023/06/12 15:45:12 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ft_btree.h"
+#include <stdlib.h>
 
-int	ft_digitat(int val, int *d, int n)
+void	ft_btree_delete(t_ft_btree_node *tree, void (*f)(void *))
 {
-	int	i;
-
-	if (n < 0)
-		return (0);
-	else if (val < 0)
-		val *= -1;
-	i = 0;
-	while (i < n)
-	{
-		val /= 10;
-		++i;
-	}
-	if (d)
-		*d = val;
-	return (val);
+	if (!tree)
+		return ;
+	ft_btree_delete(tree->first, f);
+	ft_btree_delete(tree->second, f);
+	if (tree->content)
+		f(tree->content);
+	free(tree);
 }

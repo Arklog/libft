@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:22:26 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/25 15:19:51 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:01:57 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static const char	*g_base_16 = "0123456789abcdef";
 static char *set_base(int base)
 {
 	if (base == 8)
-		return (g_base_8);
+		return ((char *)g_base_8);
 	else if (base == 10)
-		return (g_base_10);
+		return ((char *)g_base_10);
 	else if (base == 16)
-		return (g_base_16);
+		return ((char *)g_base_16);
 	else
 		return (NULL);
 }

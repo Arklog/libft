@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 01:27:10 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/07 01:27:59 by pierre           ###   ########.fr       */
+/*   Updated: 2023/06/07 01:30:00 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ t_ft_btree_node	*ft_bstree_set_first(t_ft_btree_node *nd, void *content);
 t_ft_btree_node	*ft_bstree_set_second(t_ft_btree_node *nd, void *content);
 
 /**
- * Delete the node nd using f to free it's content, it's parent node link will be set to null
+ * Delete the node nd using f to free it's content, it's
+ * parent node link will be set to null and it's children will be removed as well
  *
  * @param nd		the node to remove
  * @param f			a callback to delete it's content

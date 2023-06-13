@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 01:24:35 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/12 18:00:31 by pierre           ###   ########.fr       */
+/*   Updated: 2023/06/13 15:22:20 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct ft_btree_node {
 	void					*content;
 	struct ft_btree_node	*first;
 	struct ft_btree_node	*second;
+	struct ft_btree_node	*parent;
 }	t_ft_btree_node;
 
 /**
@@ -31,6 +32,8 @@ typedef struct ft_btree_node {
  * @return
  */
 t_ft_btree_node	*ft_btree_create(void *content, t_ft_btree_node_type type);
+
+t_ft_btree_node	*ft_btree_add(t_ft_btree_node *parent, int first, void *content, t_ft_btree_node_type type);
 
 /**
  * Delete the given node and all subsequent children, children

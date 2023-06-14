@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:58:34 by pducloux          #+#    #+#             */
-/*   Updated: 2023/06/14 16:50:06 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/06/14 18:04:49 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,61 @@ typedef struct s_list {
 	struct s_list	*next;
 }	t_list;
 
+/**
+ * Create a new list
+ * 
+ * @param content		the new list content
+ * 
+ * @return the new list or NULL on failure
+*/
 t_list	*ft_lstnew(void *content);
 
+/**
+ * Free the element pointed to by lst and all subsequent elements and free it's content using f
+ * 
+ * @param lst	the element from which to delete
+ * @param f		the function to free the contents
+ * 
+ * @warning		f must not be NULL
+*/
+void	ft_lstclear(t_list *lst, void (*f)(void *));
+
+/**
+ * Insert a new element at the beggining of the list
+*/
 void	ft_lstaddfront(t_list **lst, t_list *new);
 
+/**
+ * Push a new element at the end of the list
+*/
 void	ft_lstaddback(t_list **lst, t_list *new);
 
+/**
+ * Get the number of elements in the list
+ * 
+ * @param lst		the list
+ * 
+ * @return the number of elements in the list or 0 is the list is empty or NULL
+*/
 int		ft_lstsize(t_list	*lst);
 
+/**
+ * Return the last element of the list
+ * 
+ * @param lst		the list
+ * 
+ * @return the last element of the list or NULL if the list is empty
+*/
 t_list	*ft_lstlast(t_list	*lst);
 
+/**
+ * Iterate over the list and apply f over each element of the list with i being the index of each element
+ * 
+ * @param lst		the list
+ * @param f			the function to operate over each element
+ * 
+ * @return 1 if f successed over each element, 0 else
+*/
 int		ft_lstiteri(t_list *lst, int (*f)(size_t i, void *content));
+
 #endif

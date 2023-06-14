@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:58:34 by pducloux          #+#    #+#             */
-/*   Updated: 2023/06/14 18:04:49 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/06/14 18:08:17 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,16 @@ t_list	*ft_lstlast(t_list	*lst);
  * @return 1 if f successed over each element, 0 else
 */
 int		ft_lstiteri(t_list *lst, int (*f)(size_t i, void *content));
+
+/**
+ * Return the nth element of lst, index can be negative in which case 
+ * the function will return the nth element from the end
+ * 
+ * @param lst		the list
+ * @param index		the index to lookup
+ * 
+ * @return the element or NULL if none found
+*/
+t_list	*ft_lstat(t_list	*lst, int index);
 
 #endif

@@ -6,12 +6,17 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:58:34 by pducloux          #+#    #+#             */
-/*   Updated: 2023/06/14 12:58:54 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:50:06 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
+
+# include <sys/types.h>
+# include <stdlib.h>
+
+# include "ft_string.h"
 
 typedef struct s_list {
 	void			*content;

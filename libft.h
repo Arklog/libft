@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:05:01 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/14 12:59:08 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:50:48 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_string.h"
+# include "ft_list.h"
 
 
 

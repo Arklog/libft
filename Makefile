@@ -28,6 +28,7 @@ SRC		:=	./src/ft_bstree/ft_bstree_create.c\
 			./src/ft_list/ft_lstnew.c\
 			./src/ft_list/ft_lstsize.c\
 			./src/ft_list/ft_lstiteri.c\
+			./src/ft_list/ft_lstappend.c\
 			./src/ft_list/ft_lstlast.c\
 			./src/ft_putstrfd.c\
 			./src/ft_stdlib/ft_atoi.c\

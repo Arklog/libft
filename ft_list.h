@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:58:34 by pducloux          #+#    #+#             */
-/*   Updated: 2023/06/15 22:17:04 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/06/16 16:41:22 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,18 @@ t_list	*ft_lstat(t_list	*lst, int index);
  * @warning new must not be NULL
 */
 void	ft_lstappend(t_list *lst, t_list *new);
+
+/**
+ * Return the index of the current node
+ * 
+ * @param begin		the beggining of the list
+ * @param nd		the node
+ * 
+ * @return the index of the node or -1 if none found
+ * 
+ * @warning begin must not be NULL
+ * @warning nd must not be NULL
+*/
+int		ft_lstindex(t_list *begin, t_list *nd);
 
 #endif

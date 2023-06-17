@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/17 23:00:04 by pierre           ###   ########.fr       */
+/*   Updated: 2023/06/17 15:35:45 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,5 +191,33 @@ size_t	ft_countcs(const char *str, const char *charset);
  * @warning			arr must not be NULL
 */
 void	rotate(void *arr, int direction, size_t n, size_t size);
+
+/**
+ * copies the string pointed to by src, to the buffer pointed to by dest.
+ * 
+ * @param dest		pointer to the dest buffer 
+ * @param src		pointer to the source string
+ * 
+ * @return			a pointer to the destination string
+ * 
+ * @warning			dest string must be large enough to receive the copy
+ * @warning			beware of of buffer overruns!
+ */
+char	*ft_strcpy(char *dest, const char *src);
+
+/**
+ * copies the string pointed to by src, to the buffer pointed to by dest.
+ * 
+ * @param dest		pointer to the dest buffer 
+ * @param src		pointer to the source string
+ * @param n			nb of bytes copied from src
+ * 
+ * @return			a pointer to the destination string
+ * 
+ * @warning			dest string must be large enough to receive the copy
+ * @warning			If there is no \0 in n-bytes of src, dest will not be null-terminated.
+ * @warning			beware of of buffer overruns!
+ */
+char	*ft_strncpy(char *dest, const char *src, size_t n);
 
 #endif

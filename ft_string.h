@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/17 23:00:04 by pierre           ###   ########.fr       */
+/*   Updated: 2023/06/18 14:40:36 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ size_t	ft_strnlen(const char *str, size_t n);
  * Compare the string s1 and s2
  * @param s1
  * @param s2
- * @return A positive integer if s1 > s2, a negative one if s1 < s2 or 0 if s1 == s2
+ * @return 	A positive integer if s1 > s2, a negative one if s1 < s2
+ * 			or 0 if s1 == s2
  */
 int		ft_strcmp(const char *s1, const char *s2);
 
@@ -103,9 +104,11 @@ char	*ft_strdup(const char *str);
  * Duplicate at most n characters of str
  *
  * @param str
- * @param n		The maximum number of character to copy, not taking the NULL byte into account
+ * @param n		The maximum number of character to copy, not taking 
+ * 				the NULL byte into account
  *
- * @return 		The new string or NULL on error, the new string will be n + 1 bytes long
+ * @return 		The new string or NULL on error, the new string will
+ * 				be n + 1 bytes long
  *
  * @warning		str must not be null
  */
@@ -149,6 +152,20 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
  * @warning			dest must be at least n bytes long
  */
 void	*ft_memset(void *dest, int v, size_t n);
+
+/**
+ * Repeat copy src in dest, if n < srclen then the first n bytes of 
+ * src will be copied, if n > srclen dest will be filled with src
+ * and if n % srclen != 0 then the last src will not be entirely copied
+ * 
+ * @param dest		the destination buffer
+ * @param src		the source buffer
+ * @param srclen	the size of the source buffer
+ * @param n			the size of the dest buffer
+ * 
+ * @return			dest
+*/
+void	*ft_memelemset(void *dest, void *src, size_t srclen, size_t n);
 
 /**
  * Count the number of characters matching c in str.

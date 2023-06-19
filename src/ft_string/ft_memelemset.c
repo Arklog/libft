@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstat.c                                         :+:      :+:    :+:   */
+/*   ft_memelemset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 18:09:54 by pducloux          #+#    #+#             */
-/*   Updated: 2023/06/16 18:21:21 by pducloux         ###   ########.fr       */
+/*   Created: 2023/06/18 14:42:23 by pducloux          #+#    #+#             */
+/*   Updated: 2023/06/18 14:45:19 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-#include "ft_math.h"
+#include "ft_string.h"
 
-t_list	*ft_lstat(t_list *lst, int index)
+void	*ft_memelemset(void *dest, void *src, size_t srclen, size_t n)
 {
 	size_t	i;
-	size_t	at;
 
-	i = ft_absi(index);
-	if ((int)i >= ft_lstsize(lst))
-		return (NULL);
-	if (index < 0)
-		at = ft_lstsize(lst) + index;
-	else
-		at = index;
-	while (at--)
-		lst = lst->next;
-	return (lst);
+	i = 0;
+	while (i < n)
+	{
+		((char *)dest)[i] = ((char *)src)[i % srclen];
+		++i;
+	}
+	return (dest);
 }

@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ctype.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:40:23 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/08 16:41:11 by pierre           ###   ########.fr       */
+/*   Updated: 2023/06/18 14:25:54 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CTYPE_H
-#define FT_CTYPE_H
+# define FT_CTYPE_H
 
 /**
  * Check if a given character is a digit

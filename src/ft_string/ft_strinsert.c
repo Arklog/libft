@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 17:30:57 by pducloux          #+#    #+#             */
-/*   Updated: 2023/06/30 17:30:57 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/06/30 21:29:00 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_strinsert(const char *str, const char *begin, const char *what)
 		return (NULL);
 	ft_memcpy(new, str, begin - str);
 	ft_memcpy(new + (begin - str), what, wlen);
-	ft_memcpy(new + (begin - str) + wlen, begin + 1, ft_strlen(begin + 1));
+	if (begin < str + ft_strlen(str))
+		ft_memcpy(new + (begin - str) + wlen, begin + 1, ft_strlen(begin + 1));
+	new[strlen + wlen] = 0;
 	return (new);
 }

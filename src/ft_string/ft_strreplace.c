@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_delete.c                                  :+:      :+:    :+:   */
+/*   ft_strreplace.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 15:42:48 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/23 16:56:53 by pducloux         ###   ########.fr       */
+/*   Created: 2023/06/30 17:30:54 by pducloux          #+#    #+#             */
+/*   Updated: 2023/06/30 17:30:54 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
-#include <stdlib.h>
+#include "ft_string.h"
 
-void	ft_btree_delete(t_ft_btree_node *tree, void (*f)(void *))
+char	*ft_strreplace(const char *str, const char *begin,
+			const char *end, const char *what)
 {
-	if (!tree)
-		return ;
-	ft_btree_delete(tree->first, f);
-	ft_btree_delete(tree->second, f);
-	if (tree->content)
-		f(tree->content);
-	free(tree);
-	return ;
+	char	*new;
+	char	*tmp;
+
+	tmp = ft_strremove(str, begin, end);
+	if (!tmp)
+		return (NULL);
+	new = ft_strinsert(tmp, tmp + (begin - str), what);
+	if (!new)
+		return (free(tmp), NULL);
+	free(tmp);
+	return (new);
 }

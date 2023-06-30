@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_btree.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 01:24:35 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/13 15:22:20 by pierre           ###   ########.fr       */
+/*   Updated: 2023/06/30 14:41:51 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ typedef u_int64_t	t_ft_btree_node_type;
 
 typedef struct ft_btree_node {
 	t_ft_btree_node_type	type;
-	void					*content;
+	char					*content;
 	struct ft_btree_node	*first;
 	struct ft_btree_node	*second;
-	struct ft_btree_node	*parent;
 }	t_ft_btree_node;
 
 /**
@@ -33,7 +32,8 @@ typedef struct ft_btree_node {
  */
 t_ft_btree_node	*ft_btree_create(void *content, t_ft_btree_node_type type);
 
-t_ft_btree_node	*ft_btree_add(t_ft_btree_node *parent, int first, void *content, t_ft_btree_node_type type);
+t_ft_btree_node	*ft_btree_add(t_ft_btree_node *parent, int first,
+					void *content, t_ft_btree_node_type type);
 
 /**
  * Delete the given node and all subsequent children, children

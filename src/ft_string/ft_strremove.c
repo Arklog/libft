@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_delete.c                                  :+:      :+:    :+:   */
+/*   ft_strremove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 15:42:48 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/23 16:56:53 by pducloux         ###   ########.fr       */
+/*   Created: 2023/06/30 17:19:55 by pducloux          #+#    #+#             */
+/*   Updated: 2023/06/30 17:23:13 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
-#include <stdlib.h>
+#include "ft_string.h"
 
-void	ft_btree_delete(t_ft_btree_node *tree, void (*f)(void *))
+char	*ft_strremove(const char *str, const char *begin, const char *end)
 {
-	if (!tree)
-		return ;
-	ft_btree_delete(tree->first, f);
-	ft_btree_delete(tree->second, f);
-	if (tree->content)
-		f(tree->content);
-	free(tree);
-	return ;
+	size_t	nstr;
+	size_t	ndel;
+	char	*new;
+
+	nstr = ft_strlen(str);
+	ndel = end - begin;
+	new = malloc(nstr - ndel + 1);
+	if (!new)
+		return (NULL);
+	ft_memcpy(new, str, begin - str);
+	ft_memcpy(new + (begin - str), end, ft_strlen(end));
+	new[nstr - ndel] = 0;
+	return (new);
 }

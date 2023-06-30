@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/19 16:37:36 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:19:31 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,5 +236,41 @@ char	*ft_strcpy(char *dest, const char *src);
  * @warning			beware of of buffer overruns!
  */
 char	*ft_strncpy(char *dest, const char *src, size_t n);
+
+/**
+ * Copy str and remove from begin to end and then return it
+ * 
+ * @param src		the original string
+ * @param begin		the character from which to delete (included)
+ * @param end		the character from which not to delete (not included)
+ * 
+ * @return			the new string or NULL on error
+*/
+char	*ft_strremove(const char *src, const char *begin, const char *end);
+
+/**
+ * Copy str and insert what into str after character begin
+ * 
+ * @param src		the original string
+ * @param begin		the character after which to delete
+ * @param what		the string to insert
+ * 
+ * @return			the new string on success or NULL on error
+*/
+char	*ft_strinsert(const char *src, const char *begin, const char *what);
+
+/**
+ * Copy str, remove the character between begin and end and insert
+ * what after begin
+ * 
+ * @param src		the original string
+ * @param begin		the character from which to remove (included)
+ * @param end		the character from which not to delete (not included)
+ * @param what		the string to insert after begin
+ * 
+ * @return			the new string on success or NULL on error
+*/
+char	*ft_strreplace(const char *src, const char *begin,
+			const char *end, const char *what);
 
 #endif

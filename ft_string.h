@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/30 17:19:31 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/06/30 18:00:36 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,17 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
  * @warning		str must not be null
  */
 char	*ft_strchr(const char *str, int c);
+
+/**
+ * Find the first occurence of a character of charset in str
+ * 
+ * @param str		the string to search in
+ * @param charset	the character set
+ * 
+ * @return			the first occurence of a character of charset in str
+ * 					or NULL if none found
+*/
+char	*ft_strchr1(const char *str, const char *charset);
 
 /**
  * @brief Allocate a new string being the concatenation of s1 and s2

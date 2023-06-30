@@ -21,6 +21,7 @@ SRC		:=	./src/ft_bstree/ft_bstree_create.c\
 			./src/ft_string/ft_memset.c\
 			./src/ft_string/ft_strchr.c\
 			./src/ft_string/rotate.c\
+			./src/ft_string/ft_strchr1.c\
 			./src/ft_string/ft_strdup.c\
 			./src/ft_split.c\
 			./src/ft_math/ft_digitat.c\

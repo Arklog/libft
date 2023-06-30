@@ -7,11 +7,17 @@ SRC		:=	./src/ft_bstree/ft_bstree_create.c\
 			./src/ft_ctype/ft_isalpha.c\
 			./src/ft_ctype/ft_isdigit.c\
 			./src/ft_string/ft_strcat.c\
+			./src/ft_string/ft_strinsert.c\
 			./src/ft_string/ft_memcpy.c\
+			./src/ft_string/ft_strncpy.c\
+			./src/ft_string/ft_memelemset.c\
 			./src/ft_string/ft_memmove.c\
 			./src/ft_string/ft_strcmp.c\
+			./src/ft_string/ft_strremove.c\
 			./src/ft_string/ft_countc.c\
+			./src/ft_string/ft_strcpy.c\
 			./src/ft_string/ft_strlen.c\
+			./src/ft_string/ft_strreplace.c\
 			./src/ft_string/ft_memset.c\
 			./src/ft_string/ft_strchr.c\
 			./src/ft_string/rotate.c\
@@ -37,7 +43,7 @@ SRC		:=	./src/ft_bstree/ft_bstree_create.c\
 OBJ     := ${SRC:.c=.o}
 
 CC      := cc
-CFLAGS  := -Wall -Werror -Wextra -I.
+CFLAGS  := -Wall -Werror -Wextra -I. -g
 
 NAME    := libft.a
 

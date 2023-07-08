@@ -71,7 +71,7 @@ int		ft_lstsize(t_list	*lst);
 t_list	*ft_lstlast(t_list	*lst);
 
 /**
- * Iterate over the list and apply f over each element of the list with i being the index of each element
+ * Iterate over the list and apply f over each element of the list with i being the push_swap_index of each element
  * 
  * @param lst		the list
  * @param f			the function to operate over each element
@@ -81,11 +81,11 @@ t_list	*ft_lstlast(t_list	*lst);
 int		ft_lstiteri(t_list *lst, int (*f)(size_t i, void *content));
 
 /**
- * Return the nth element of lst, index can be negative in which case 
+ * Return the nth element of lst, push_swap_index can be negative in which case
  * the function will return the nth element from the end
  * 
  * @param lst		the list
- * @param index		the index to lookup
+ * @param index		the push_swap_index to lookup
  * 
  * @return the element or NULL if none found
 */
@@ -102,12 +102,12 @@ t_list	*ft_lstat(t_list	*lst, int index);
 void	ft_lstappend(t_list *lst, t_list *new);
 
 /**
- * Return the index of the current node
+ * Return the push_swap_index of the current node
  * 
  * @param begin		the beggining of the list
  * @param nd		the node
  * 
- * @return the index of the node or -1 if none found
+ * @return the push_swap_index of the node or -1 if none found
  * 
  * @warning begin must not be NULL
  * @warning nd must not be NULL

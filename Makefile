@@ -1,5 +1,4 @@
-SRC		:=	./src/ft_bstree/ft_bstree_create.c\
-			./src/ft_btree/ft_btree_foreach.c\
+SRC		:=	./src/ft_btree/ft_btree_foreach.c\
 			./src/ft_btree/ft_btree_delete.c\
 			./src/ft_btree/ft_btree_foreachnd.c\
 			./src/ft_btree/ft_btree_create.c\
@@ -24,7 +23,9 @@ SRC		:=	./src/ft_bstree/ft_bstree_create.c\
 			./src/ft_string/ft_strchr1.c\
 			./src/ft_string/ft_strdup.c\
 			./src/ft_split.c\
+			./src/ft_math/ft_min.c\
 			./src/ft_math/ft_digitat.c\
+			./src/ft_math/ft_getdigits.c\
 			./src/ft_math/ft_absi.c\
 			./src/ft_math/ft_powi.c\
 			./src/ft_splitcs.c\
@@ -64,3 +65,4 @@ fclean: clean
 	rm -f ${NAME}
 
 re: | fclean all
+

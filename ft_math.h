@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:30:17 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/29 20:30:03 by pierre           ###   ########.fr       */
+/*   Updated: 2023/07/10 01:53:48 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ int				ft_digitat(int val, int *d, int n);
  *
  * @param val
  *
- * @return	the number of digits of the number, if number is 0 return 1 (zero count as a digit)
+ * @return	the number of digits of the number, if number is 0
+ *  return 1 (zero count as a digit)
  */
-int 			ft_getdigits(int val);
+int				ft_getdigits(int val);
 
 /**
  * Get the maximum value
@@ -59,7 +60,7 @@ int 			ft_getdigits(int val);
  * @param b
  * @return
  */
-int 			ft_min(int a, int b);
+int				ft_min(int a, int b);
 
 /**
  * Get the maximum value
@@ -67,6 +68,6 @@ int 			ft_min(int a, int b);
  * @param b
  * @return
  */
-int 			ft_max(int a, int b);
+int				ft_max(int a, int b);
 
 #endif

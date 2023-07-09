@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/30 18:00:36 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/07/10 01:54:15 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,7 +243,8 @@ char	*ft_strcpy(char *dest, const char *src);
  * @return			a pointer to the destination string
  * 
  * @warning			dest string must be large enough to receive the copy
- * @warning			If there is no \0 in n-bytes of src, dest will not be null-terminated.
+ * @warning			If there is no \0 in n-bytes of src, dest will not be 
+ * null-terminated.
  * @warning			beware of of buffer overruns!
  */
 char	*ft_strncpy(char *dest, const char *src, size_t n);

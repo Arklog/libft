@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:58:34 by pducloux          #+#    #+#             */
-/*   Updated: 2023/06/16 16:41:22 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/07/10 01:53:13 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ typedef struct s_list {
 t_list	*ft_lstnew(void *content);
 
 /**
- * Free the element pointed to by lst and all subsequent elements and free it's content using f
+ * Free the element pointed to by lst and all subsequent elements 
+ * and free it's content using f
  * 
  * @param lst	the element from which to delete
  * @param f		the function to free the contents
@@ -71,7 +72,8 @@ int		ft_lstsize(t_list	*lst);
 t_list	*ft_lstlast(t_list	*lst);
 
 /**
- * Iterate over the list and apply f over each element of the list with i being the push_swap_index of each element
+ * Iterate over the list and apply f over each element of the list 
+ * with i being the push_swap_index of each element
  * 
  * @param lst		the list
  * @param f			the function to operate over each element

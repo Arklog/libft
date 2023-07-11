@@ -49,8 +49,7 @@ CFLAGS  := -Wall -Werror -Wextra -I. -g
 
 NAME    := libft.a
 
-all:    ${NAME}
-	
+all:    ${NAME} ;
 
 ${NAME}: ${OBJ}
 	@ar rcs $@ ${OBJ}
@@ -64,5 +63,4 @@ clean:
 fclean: clean
 	rm -f ${NAME}
 
-re: | fclean all
-
+re: | fclean all ;

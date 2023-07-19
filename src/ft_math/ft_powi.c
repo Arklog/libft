@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_powi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:31:10 by pierre            #+#    #+#             */
-/*   Updated: 2023/05/07 20:33:07 by pierre           ###   ########.fr       */
+/*   Updated: 2023/07/10 01:51:53 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-int		ft_powi(int base, int power)
+int	ft_powi(int base, int power)
 {
 	int	ret;
 

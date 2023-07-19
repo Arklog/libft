@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/07/19 01:02:23 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/07/19 02:02:04 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -293,4 +293,5 @@ char	*ft_strreplace(const char *src, const char *begin,
  * @return			a statically allocated string or NULL on failure
 */
 char	*ft_itoa(int64_t val);
+
 #endif

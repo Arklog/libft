@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:30:17 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/16 01:01:38 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/07/10 01:53:48 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,32 @@ unsigned int	ft_absi(int val);
  * 				digit or if n < 0
  */
 int				ft_digitat(int val, int *d, int n);
+
+/**
+ * Return the number of digits of a base 10 number
+ *
+ * @param val
+ *
+ * @return	the number of digits of the number, if number is 0
+ *  return 1 (zero count as a digit)
+ */
+int				ft_getdigits(int val);
+
+/**
+ * Get the maximum value
+ *
+ * @param a
+ * @param b
+ * @return
+ */
+int				ft_min(int a, int b);
+
+/**
+ * Get the maximum value
+ * @param a
+ * @param b
+ * @return
+ */
+int				ft_max(int a, int b);
 
 #endif

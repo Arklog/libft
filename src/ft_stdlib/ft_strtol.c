@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:22:26 by pierre            #+#    #+#             */
-/*   Updated: 2023/07/05 22:38:20 by pierre           ###   ########.fr       */
+/*   Updated: 2023/07/19 21:14:29 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ long	ft_strtol(const char *str, char **endptr, int base)
 		return (0);
 	*endptr = (char *)str;
 	negative = 1;
-	if (str[0] == '-')
+	if (str[0] == '-' && ft_strlen(str) > 1)
 	{
 		negative = -1;
 		str++;

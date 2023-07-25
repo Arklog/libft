@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/30 18:00:36 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:45:36 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,12 +141,29 @@ char	*ft_strndup(const char *str, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 /**
+ * Duplicate the first n bytes of src
+ * 
+ * @param src		the source buffer
+ * @param n			the number of bytes to copy
+ * 
+ * @return			the new buffer on success or NULL on error
+ * 
+ * @warning			src must not be NULL
+ * @warning			src must be at least n bytes long
+*/
+void	*ft_memdup(void *src, size_t n);
+
+/**
  * @brief Copy n bytes from src to dest, memory can overlap
  *
- * @param dest
- * @param src
- * @param n
- * @return void*
+ * @param dest 		destination buffer
+ * @param src		source buffer
+ * @param n			number of bytes to copy
+ * 
+ * @return			dest
+ * 
+ * @warning			source and dest must be at least n bytes long
+ * @warning			null check are not performed
  */
 void	*ft_memmove(void *dest, const void *src, size_t n);
 

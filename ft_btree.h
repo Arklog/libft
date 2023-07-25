@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 01:24:35 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/30 14:41:51 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:45:16 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef u_int64_t	t_ft_btree_node_type;
 
 typedef struct ft_btree_node {
 	t_ft_btree_node_type	type;
-	char					*content;
+	void					*content;
 	struct ft_btree_node	*first;
 	struct ft_btree_node	*second;
 }	t_ft_btree_node;

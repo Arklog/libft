@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:58:34 by pducloux          #+#    #+#             */
-/*   Updated: 2023/06/16 16:41:22 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/07/25 18:56:52 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,15 @@ void	ft_lstappend(t_list *lst, t_list *new);
  * @warning nd must not be NULL
 */
 int		ft_lstindex(t_list *begin, t_list *nd);
+
+/**
+ * Duplicate the list
+ * 
+ * @param lst		the list to duplicate
+ * @param elem_size	the size of each element
+ * 
+ * @return the duplicated list or NULL on failure
+*/
+t_list	*ft_lstdup(t_list *lst, size_t elem_size);
 
 #endif

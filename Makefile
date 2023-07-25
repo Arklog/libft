@@ -29,6 +29,7 @@ SRC		:=	./src/ft_bstree/ft_bstree_create.c\
 			./src/ft_math/ft_powi.c\
 			./src/ft_splitcs.c\
 			./src/ft_list/ft_lstat.c\
+			./src/ft_list/ft_lstdup.c\
 			./src/ft_list/ft_lstaddback.c\
 			./src/ft_list/ft_lstaddfront.c\
 			./src/ft_list/ft_lstclear.c\

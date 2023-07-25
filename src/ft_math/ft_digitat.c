@@ -6,7 +6,7 @@
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:34:08 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/12 22:34:10 by pierre           ###   ########.fr       */
+/*   Updated: 2023/06/27 16:03:07 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	ft_digitat(int val, int *d, int n)
 		++i;
 	}
 	if (d)
-		*d = val;
-	return (val);
+		*d = val % 10;
+	return (val % 10);
 }

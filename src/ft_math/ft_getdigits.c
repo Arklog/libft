@@ -1,13 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bstree_create.c                                 :+:      :+:    :+:   */
+/*   ft_getdigits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pierre <pierre@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/07 01:23:27 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/07 01:23:36 by pierre           ###   ########.fr       */
+/*   Created: 2023/06/27 16:11:55 by pierre            #+#    #+#             */
+/*   Updated: 2023/06/27 16:12:40 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bstree.h"
+#include "ft_math.h"
+
+int	ft_getdigits(int val)
+{
+	int	n;
+
+	if (val < 0)
+		val *= -1;
+	if (!val)
+		return (1);
+	n = 0;
+	while (val)
+	{
+		val /= 10;
+		++n;
+	}
+	return (n);
+}

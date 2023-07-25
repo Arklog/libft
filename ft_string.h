@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/07/25 15:45:36 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/07/25 19:00:31 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -260,7 +260,8 @@ char	*ft_strcpy(char *dest, const char *src);
  * @return			a pointer to the destination string
  * 
  * @warning			dest string must be large enough to receive the copy
- * @warning			If there is no \0 in n-bytes of src, dest will not be null-terminated.
+ * @warning			If there is no \0 in n-bytes of src, dest will not be 
+ * 					null-terminated.
  * @warning			beware of of buffer overruns!
  */
 char	*ft_strncpy(char *dest, const char *src, size_t n);
@@ -300,5 +301,14 @@ char	*ft_strinsert(const char *src, const char *begin, const char *what);
 */
 char	*ft_strreplace(const char *src, const char *begin,
 			const char *end, const char *what);
+
+/**
+ * Get the string equivalent of val
+ * 
+ * @param val		the value to convert
+ * 
+ * @return			a statically allocated string or NULL on failure
+*/
+char	*ft_itoa(int64_t val);
 
 #endif

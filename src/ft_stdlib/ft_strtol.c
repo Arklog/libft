@@ -6,7 +6,11 @@
 /*   By: pierre <pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:22:26 by pierre            #+#    #+#             */
+<<<<<<< Updated upstream
 /*   Updated: 2023/07/19 21:14:29 by pierre           ###   ########.fr       */
+=======
+/*   Updated: 2023/07/26 14:42:08 by pducloux         ###   ########.fr       */
+>>>>>>> Stashed changes
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +59,7 @@ long	ft_strtol(const char *str, char **endptr, int base)
 	int			negative;
 
 	_base = set_base(base);
-	if (!_base)
+	if (!_base || ((*str == '+' || *str == '-') && ft_strlen(str) == 1))
 		return (0);
 	*endptr = (char *)str;
 	negative = 1;

@@ -22,6 +22,7 @@ SRC		:=	./src/ft_btree/ft_btree_foreach.c\
 			./src/ft_string/ft_itoa.c\
 			./src/ft_string/rotate.c\
 			./src/ft_string/ft_strchr1.c\
+			./src/ft_string/ft_memdup.c\
 			./src/ft_string/ft_strdup.c\
 			./src/ft_split.c\
 			./src/ft_math/ft_min.c\
@@ -54,7 +55,7 @@ NAME    := libft.a
 all:    ${NAME} ;
 
 ${NAME}: ${OBJ}
-	@ar rcs $@ ${OBJ}
+	ar rcs $@ ${OBJ}
 
 %.o:
 	${CC} ${CFLAGS} -c -o $@ ${@:.o=.c}
@@ -65,4 +66,6 @@ clean:
 fclean: clean
 	rm -f ${NAME}
 
-re: | fclean all ;
+re:
+	${MAKE} fclean
+	${MAKE} all

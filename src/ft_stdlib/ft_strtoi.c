@@ -31,7 +31,7 @@ static char	*set_base(int base)
 		return (NULL);
 }
 
-static void	strtol_init(long *result, long *incr, const char **str, int *neg)
+static void	strtol_init(int *result, int *incr, const char **str, int *neg)
 {
 	*result = 0;
 	*incr = 1;
@@ -48,9 +48,9 @@ static void	strtol_init(long *result, long *incr, const char **str, int *neg)
 long	ft_strtol(const char *s, char **endptr, int base)
 {
 	const char	*_base;
-	long		incr;
-	long		val;
-	long		result;
+	int			incr;
+	int			val;
+	int			result;
 	int			negative;
 
 	if (!ft_strlen(s) || ((*s == '+' || *s == '-') && ft_strlen(s) == 1))
@@ -58,14 +58,14 @@ long	ft_strtol(const char *s, char **endptr, int base)
 	_base = set_base(base);
 	strtol_init(&result, &incr, &s, &negative);
 	*endptr = (char *)s + ft_strlen(s) - 1;
-	result = ft_strchr(_base, *(*endptr--)) - _base;
+	result = (int)(ft_strchr(_base, *(*endptr--)) - _base);
 	while (s <= *endptr)
 	{
-		if (incr > ((LONG_MAX + (negative == -1)) / base))
+		if (incr > ((INT_MAX + (negative == -1)) / base))
 			return (0);
 		incr *= base;
-		val = incr * (ft_strchr(_base, **endptr) - _base);
-		if (result > ((LONG_MAX + (negative == -1)) - val))
+		val = incr * (int)(ft_strchr(_base, **endptr) - _base);
+		if (result > (INT_MAX + (negative == -1) - val))
 			return (0);
 		result += val;
 		--(*endptr);

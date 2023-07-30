@@ -14,14 +14,9 @@
 # define FT_STDLIB_H
 
 /**
-<<<<<<< Updated upstream
- * Convert the initial portion of str into a long integer according 
- * to the given base
-=======
  * Convert the initial portion of str into a long integer according to the
  * given base, if successful *endptr == str evaluate to true
  *
->>>>>>> Stashed changes
  * @param str		the string to be converted
  * @param endptr
  * @param base		the base in which to convert

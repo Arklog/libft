@@ -31,44 +31,49 @@ static char	*set_base(int base)
 		return (NULL);
 }
 
-static int	strtol_loop(const char **str, const char *_base,
-						long *result, int base)
+static void	strtol_init(long *result, long *incr, const char **str, int *neg)
 {
-	int		incr;
-	char	*ptr;
-
-	ptr = ft_strchr(_base, **str);
-	if (!ptr)
-		return (0);
-	incr = (ptr - _base) * ft_powi(base, ft_strlen(*str) - 1);
-	if (*result > (LONG_MAX - incr))
-		return (0);
-	*result += incr;
-	++(*str);
-	return (1);
+	*result = 0;
+	*incr = 1;
+	*neg = 1;
+	if (**str == '-')
+	{
+		*neg = -1;
+		++(*str);
+	}
+	else if (**str == '+')
+		++(*str);
 }
 
 long	ft_strtol(const char *str, char **endptr, int base)
 {
 	const char	*_base;
+	long		incr;
+	long		val;
 	long		result;
 	int			negative;
 
+<<<<<<< Updated upstream
 	_base = set_base(base);
 	if (!_base || ((*str == '+' || *str == '-') && ft_strlen(str) == 1))
+=======
+	if (!ft_strlen(str))
+>>>>>>> Stashed changes
 		return (0);
-	*endptr = (char *)str;
-	negative = 1;
-	if (str[0] == '-')
+	_base = set_base(base);
+	strtol_init(&result, &incr, &str, &negative);
+	*endptr = (char *)str + ft_strlen(str) - 1;
+	result = ft_strchr(_base, *(*endptr--)) - _base;
+	while (str <= *endptr)
 	{
-		negative = -1;
-		str++;
-		(*endptr)++;
+		if (incr > (LONG_MAX / base))
+			return (0);
+		incr *= base;
+		val = incr * (ft_strchr(_base, **endptr) - _base);
+		if (result > (LONG_MAX - val))
+			return (0);
+		result += val;
+		--(*endptr);
 	}
-	else if (str[0] == '+')
-		++str;
-	result = 0;
-	while (*str && strtol_loop(&str, _base, &result, base))
-		++(*endptr);
 	return (negative * result);
 }

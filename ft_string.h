@@ -60,7 +60,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
  * @param	str	the string to search in
  * @param	c	the character to search for
  *
- * @return		a pointer over the first occurence of c in str
+ * @return		a pointer over the first occurence of c in str or NULL if
+ * none found
  *
  * @warning		str must be null terminated
  * @warning		str must not be null

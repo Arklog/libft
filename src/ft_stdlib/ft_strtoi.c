@@ -15,9 +15,19 @@
 #include "ft_math.h"
 #include <limits.h>
 
-static const char	*g_base_8 = "01234567";
-static const char	*g_base_10 = "0123456789";
-static const char	*g_base_16 = "0123456789abcdef";
+static const char		*g_base_8 = "01234567";
+static const char		*g_base_10 = "0123456789";
+static const char		*g_base_16 = "0123456789abcdef";
+
+typedef unsigned int	t_ui;
+
+typedef struct s_ninfo {
+	unsigned int	cutoff;
+	unsigned int	acc;
+	unsigned int	cutlim;
+	int				neg;
+	int				base;
+}	t_ninfo;
 
 static char	*set_base(int base)
 {
@@ -31,44 +41,64 @@ static char	*set_base(int base)
 		return (NULL);
 }
 
-static void	strtol_init(int *result, int *incr, const char **str, int *neg)
+static int	init(const char *s, char **endptr, t_ninfo *ninfo, int base)
 {
-	*result = 0;
-	*incr = 1;
-	*neg = 1;
-	if (**str == '-')
+	if (!ft_strlen(s))
+		return (0);
+	else if (*s == '-')
+		ninfo->neg = 1;
+	else
+		ninfo->neg = 0;
+	ninfo->acc = 0;
+	ninfo->cutoff = INT_MAX + ninfo->neg;
+	ninfo->cutlim = ninfo->cutoff % base;
+	ninfo->cutoff /= base;
+	ninfo->base = base;
+	*endptr = (char *)s;
+	if (*s == '+' || *s == '-')
 	{
-		*neg = -1;
-		++(*str);
+		if (ft_strlen(s) == 1)
+			return (0);
+		else
+			++(*endptr);
 	}
-	else if (**str == '+')
-		++(*str);
+	return (1);
 }
 
-long	ft_strtol(const char *s, char **endptr, int base)
+static int	loop(char **endptr, t_ninfo *n, const char *base)
 {
-	const char	*_base;
-	int			incr;
-	int			val;
-	int			result;
-	int			negative;
+	unsigned int	val;
+	char			*tmp;
 
-	if (!ft_strlen(s) || ((*s == '+' || *s == '-') && ft_strlen(s) == 1))
+	tmp = ft_strchr(base, **endptr);
+	if (!tmp)
 		return (0);
-	_base = set_base(base);
-	strtol_init(&result, &incr, &s, &negative);
-	*endptr = (char *)s + ft_strlen(s) - 1;
-	result = (int)(ft_strchr(_base, *(*endptr--)) - _base);
-	while (s <= *endptr)
+	val = tmp - base;
+	if (n->acc > n->cutoff || (n->acc == n->cutoff && val > n->cutlim))
+		return (0);
+	else
 	{
-		if (incr > ((INT_MAX + (negative == -1)) / base))
-			return (0);
-		incr *= base;
-		val = incr * (int)(ft_strchr(_base, **endptr) - _base);
-		if (result > (INT_MAX + (negative == -1) - val))
-			return (0);
-		result += val;
-		--(*endptr);
+		n->acc *= n->base;
+		n->acc += (unsigned long)val;
 	}
-	return (negative * result);
+	++(*endptr);
+	return (1);
+}
+
+int	ft_strtoi(const char *s, char **endptr, int base)
+{
+	const char		*_base;
+	t_ninfo			ninfo;
+
+	_base = set_base(base);
+	if (!_base)
+		return (0);
+	if (!init(s, endptr, &ninfo, base))
+		return (0);
+	while (**endptr && loop(endptr, &ninfo, _base))
+		(void)0;
+	if (ninfo.neg)
+		return ((int)ninfo.acc * -1);
+	else
+		return ((int)(ninfo.acc));
 }

@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:40:23 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/18 14:25:54 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/08/01 19:32:09 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ int		ft_isalphastr(const char *str);
 /**
  * Check if a given character is a space
 */
-int     ft_isspace(int c);
+int		ft_isspace(int c);
 
 #endif

@@ -55,4 +55,9 @@ int		ft_isalpha(int c);
  */
 int		ft_isalphastr(const char *str);
 
+/**
+ * Check if a given character is a space
+*/
+int     ft_isspace(int c);
+
 #endif

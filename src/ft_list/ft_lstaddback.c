@@ -20,5 +20,5 @@ void	ft_lstaddback(t_list **lst, t_list *new)
 	if (!last)
 		*lst = new;
 	else
-		last->next = new;
+		last->list.next = new;
 }

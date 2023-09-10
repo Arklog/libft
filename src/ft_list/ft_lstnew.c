@@ -20,6 +20,6 @@ t_list	*ft_lstnew(void *content)
 	if (!new)
 		return (NULL);
 	ft_memset(new, 0, sizeof(t_list));
-	new->content = content;
+	new->list.content = content;
 	return (new);
 }

@@ -16,7 +16,7 @@ void	ft_lstappend(t_list *lst, t_list *new)
 {
 	t_list	*tmp;
 
-	tmp = lst->next;
-	lst->next = new;
-	new->next = tmp;
+	tmp = lst->list.next;
+	lst->list.next = new;
+	new->list.next = tmp;
 }

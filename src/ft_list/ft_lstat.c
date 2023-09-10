@@ -26,6 +26,6 @@ t_list	*ft_lstat(t_list *lst, int index)
 	else
 		at = index;
 	while (at--)
-		lst = lst->next;
+		lst = lst->list.next;
 	return (lst);
 }

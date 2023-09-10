@@ -13,15 +13,24 @@
 #ifndef FT_LIST_H
 # define FT_LIST_H
 
+# ifdef FT_LIST_CUSTOM_TYPE
+#  include FT_LIST_CUSTOM_TYPE
+# endif
 # include <sys/types.h>
 # include <stdlib.h>
 
 # include "ft_string.h"
 
-typedef struct s_list {
-	void			*content;
-	struct s_list	*next;
+# ifndef FT_LIST_CUSTOM_TYPE
+
+typedef union __attribute((transparent_union)) u_list {
+	struct s_list {
+		void			*content;
+		union u_list	*next;
+	} list;
 }	t_list;
+
+# endif
 
 /**
  * Create a new list

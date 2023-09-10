@@ -22,7 +22,7 @@ int	ft_lstindex(t_list *lst, t_list *nd)
 		if (lst == nd)
 			return (i);
 		++i;
-		lst = lst->next;
+		lst = lst->list.next;
 	}
 	return (-1);
 }

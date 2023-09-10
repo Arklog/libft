@@ -19,9 +19,9 @@ int	ft_lstiteri(t_list *lst, int (*f)(size_t index, void *content))
 	i = 0;
 	while (lst)
 	{
-		if (!f(i++, lst->content))
+		if (!f(i++, lst->list.content))
 			return (0);
-		lst = lst->next;
+		lst = lst->list.next;
 	}
 	return (1);
 }

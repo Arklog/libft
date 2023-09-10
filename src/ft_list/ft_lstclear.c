@@ -20,8 +20,8 @@ void	ft_lstclear(t_list *lst, void (*f)(void *content))
 		return ;
 	while (lst)
 	{
-		tmp = lst->next;
-		f(lst->content);
+		tmp = lst->list.next;
+		f(lst->list.content);
 		free(lst);
 		lst = tmp;
 	}

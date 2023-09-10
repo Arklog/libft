@@ -23,7 +23,7 @@ t_list	*ft_lstdup(t_list *lst, void *(*dup)(void *))
 	while (iter)
 	{
 		ft_lstaddback(&new, ft_lstnew(dup(iter->content)));
-		iter = iter->next;
+		iter = iter->list.next;
 	}
 	return (new);
 }

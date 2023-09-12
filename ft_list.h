@@ -13,24 +13,14 @@
 #ifndef FT_LIST_H
 # define FT_LIST_H
 
-# ifdef FT_LIST_CUSTOM_TYPE
+# ifndef FT_LIST_CUSTOM_TYPE
+#  include "ft_list_type.h"
+# else
 #  include FT_LIST_CUSTOM_TYPE
 # endif
 # include <sys/types.h>
 # include <stdlib.h>
-
 # include "ft_string.h"
-
-# ifndef FT_LIST_CUSTOM_TYPE
-
-typedef union __attribute((transparent_union)) u_list {
-	struct s_list {
-		void			*content;
-		union u_list	*next;
-	} list;
-}	t_list;
-
-# endif
 
 /**
  * Create a new list
@@ -39,7 +29,7 @@ typedef union __attribute((transparent_union)) u_list {
  * 
  * @return the new list or NULL on failure
 */
-t_list	*ft_lstnew(void *content);
+t_list	ft_lstnew(void *content);
 
 /**
  * Free the element pointed to by lst and all subsequent elements 
@@ -50,17 +40,17 @@ t_list	*ft_lstnew(void *content);
  * 
  * @warning		f must not be NULL
 */
-void	ft_lstclear(t_list *lst, void (*f)(void *));
+void	ft_lstclear(t_list lst, void (*f)(void *));
 
 /**
  * Insert a new element at the beggining of the list
 */
-void	ft_lstaddfront(t_list **lst, t_list *new);
+void	ft_lstaddfront(t_list *lst, t_list new);
 
 /**
  * Push a new element at the end of the list
 */
-void	ft_lstaddback(t_list **lst, t_list *new);
+void	ft_lstaddback(t_list *lst, t_list new);
 
 /**
  * Get the number of elements in the list
@@ -69,7 +59,7 @@ void	ft_lstaddback(t_list **lst, t_list *new);
  * 
  * @return the number of elements in the list or 0 is the list is empty or NULL
 */
-int		ft_lstsize(t_list	*lst);
+int		ft_lstsize(t_list lst);
 
 /**
  * Return the last element of the list
@@ -78,7 +68,7 @@ int		ft_lstsize(t_list	*lst);
  * 
  * @return the last element of the list or NULL if the list is empty
 */
-t_list	*ft_lstlast(t_list	*lst);
+t_list	ft_lstlast(t_list lst);
 
 /**
  * Iterate over the list and apply f over each element of the list 
@@ -89,7 +79,7 @@ t_list	*ft_lstlast(t_list	*lst);
  * 
  * @return 1 if f successed over each element, 0 else
 */
-int		ft_lstiteri(t_list *lst, int (*f)(size_t i, void *content));
+int		ft_lstiteri(t_list lst, int (*f)(size_t i, void *content));
 
 /**
  * Return the nth element of lst, push_swap_index can be negative in which case
@@ -100,7 +90,7 @@ int		ft_lstiteri(t_list *lst, int (*f)(size_t i, void *content));
  * 
  * @return the element or NULL if none found
 */
-t_list	*ft_lstat(t_list	*lst, int index);
+t_list	ft_lstat(t_list lst, int index);
 
 /**
  * Append new to lst
@@ -110,7 +100,7 @@ t_list	*ft_lstat(t_list	*lst, int index);
  * 
  * @warning new must not be NULL
 */
-void	ft_lstappend(t_list *lst, t_list *new);
+void	ft_lstappend(t_list lst, t_list new);
 
 /**
  * Return the push_swap_index of the current node
@@ -123,7 +113,7 @@ void	ft_lstappend(t_list *lst, t_list *new);
  * @warning begin must not be NULL
  * @warning nd must not be NULL
 */
-int		ft_lstindex(t_list *begin, t_list *nd);
+int		ft_lstindex(t_list begin, t_list nd);
 
 /**
  * Duplicate the list
@@ -133,6 +123,6 @@ int		ft_lstindex(t_list *begin, t_list *nd);
  * 
  * @return the duplicated list or NULL on failure
 */
-t_list	*ft_lstdup(t_list *lst, void *(*dup)(void *));
+t_list	ft_lstdup(t_list lst, void *(*dup)(void *));
 
 #endif

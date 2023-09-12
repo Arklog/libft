@@ -19,17 +19,17 @@ typedef struct s_words {
 
 static char	**g_retv;
 
-static void	free_all(char **r, t_list *lst)
+static void	free_all(char **r, t_list lst)
 {
 	char	**atmp;
-	t_list	*tmp;
+	t_list	tmp;
 
-	while (lst)
+	while (lst.list)
 	{
-		tmp = lst->next;
-		if (lst->content)
-			free(lst->content);
-		free(lst);
+		tmp.list = lst.list->next;
+		if (lst.list->content)
+			free(lst.list->content);
+		free(lst.list);
 		lst = tmp;
 	}
 	if (!r)
@@ -56,21 +56,21 @@ static t_word	*allocate_word(const char **str, const char *charset)
 	return (word);
 }
 
-static t_list	*create_words(const char *str, const char *charset)
+static t_list	create_words(const char *str, const char *charset)
 {
 	t_word		*new;
-	t_list		*lst;
+	t_list		lst;
 	const char	*end;
 
 	end = str + ft_strlen(str);
-	lst = NULL;
+	lst = (t_list){.list = NULL};
 	while (str < end)
 	{
 		if (!ft_strchr(charset, *str))
 		{
 			new = allocate_word(&str, charset);
 			if (!new)
-				return (free_all(NULL, lst), NULL);
+				return (free_all(NULL, lst), (t_list){.list = NULL});
 			ft_lstaddback(&lst, ft_lstnew((void *)new));
 		}
 		else
@@ -95,13 +95,13 @@ static int	func_iter(size_t i, void *content)
 
 char	**ft_splitcs(const char *str, const char *charset)
 {
-	t_list	*words;
+	t_list	words;
 	char	**retv;
 
 	if (!str)
 		return (NULL);
 	words = create_words(str, charset);
-	if (!words)
+	if (!words.list)
 		return (NULL);
 	retv = malloc(sizeof(char *) * (ft_lstsize(words)));
 	if (!retv)

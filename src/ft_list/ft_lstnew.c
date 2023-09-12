@@ -12,14 +12,14 @@
 
 #include "ft_list.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	ft_lstnew(void *content)
 {
-	t_list	*new;
+	t_list	new;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	ft_memset(new, 0, sizeof(t_list));
-	new->list.content = content;
+	new.list = malloc(sizeof(struct s_list));
+	if (!new.list)
+		return ((t_list){.list = NULL});
+	ft_memset(new.list, 0, sizeof(struct s_list));
+	new.list->content = content;
 	return (new);
 }

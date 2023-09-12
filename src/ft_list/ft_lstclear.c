@@ -12,17 +12,17 @@
 
 #include "ft_list.h"
 
-void	ft_lstclear(t_list *lst, void (*f)(void *content))
+void	ft_lstclear(t_list lst, void (*f)(void *content))
 {
-	t_list	*tmp;
+	t_list	tmp;
 
-	if (!lst)
+	if (!lst.list)
 		return ;
-	while (lst)
+	while (lst.list)
 	{
-		tmp = lst->list.next;
-		f(lst->list.content);
-		free(lst);
+		tmp.list = lst.list->next;
+		f(lst.list->content);
+		free(lst.list);
 		lst = tmp;
 	}
 }

@@ -12,11 +12,11 @@
 
 #include "ft_list.h"
 
-void	ft_lstappend(t_list *lst, t_list *new)
+void	ft_lstappend(t_list lst, t_list new)
 {
-	t_list	*tmp;
+	t_list	tmp;
 
-	tmp = lst->list.next;
-	lst->list.next = new;
-	new->list.next = tmp;
+	tmp.list = lst.list->next;
+	lst.list->next = new.list;
+	new.list->next = tmp.list;
 }

@@ -13,17 +13,17 @@
 #include "ft_list.h"
 #include "ft_string.h"
 
-t_list	*ft_lstdup(t_list *lst, void *(*dup)(void *))
+t_list	ft_lstdup(t_list lst, void *(*dup)(void *))
 {
-	t_list	*new;
-	t_list	*iter;
+	t_list	new;
+	t_list	iter;
 
-	new = NULL;
+	new = (t_list){.list = NULL};
 	iter = lst;
-	while (iter)
+	while (iter.list)
 	{
-		ft_lstaddback(&new, ft_lstnew(dup(iter->content)));
-		iter = iter->list.next;
+		ft_lstaddback(&new, ft_lstnew(dup(iter.list->content)));
+		iter.list = iter.list->next;
 	}
 	return (new);
 }

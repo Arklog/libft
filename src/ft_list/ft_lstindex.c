@@ -12,17 +12,17 @@
 
 #include "ft_list.h"
 
-int	ft_lstindex(t_list *lst, t_list *nd)
+int	ft_lstindex(t_list lst, t_list nd)
 {
 	int	i;
 
 	i = 0;
-	while (lst)
+	while (lst.list)
 	{
-		if (lst == nd)
+		if (lst.list == nd.list)
 			return (i);
 		++i;
-		lst = lst->list.next;
+		lst.list = lst.list->next;
 	}
 	return (-1);
 }

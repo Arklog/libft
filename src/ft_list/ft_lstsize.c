@@ -12,15 +12,15 @@
 
 #include "ft_list.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list lst)
 {
 	int	i;
 
 	i = 0;
-	while (lst)
+	while (lst.list)
 	{
 		++i;
-		lst = lst->list.next;
+		lst.list = lst.list->next;
 	}
 	return (i);
 }

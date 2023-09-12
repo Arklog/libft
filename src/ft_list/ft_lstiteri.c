@@ -12,16 +12,16 @@
 
 #include "ft_list.h"
 
-int	ft_lstiteri(t_list *lst, int (*f)(size_t index, void *content))
+int	ft_lstiteri(t_list lst, int (*f)(size_t index, void *content))
 {
 	size_t	i;
 
 	i = 0;
-	while (lst)
+	while (lst.list)
 	{
-		if (!f(i++, lst->list.content))
+		if (!f(i++, lst.list->content))
 			return (0);
-		lst = lst->list.next;
+		lst.list = lst.list->next;
 	}
 	return (1);
 }

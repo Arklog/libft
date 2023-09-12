@@ -13,19 +13,19 @@
 #include "ft_list.h"
 #include "ft_math.h"
 
-t_list	*ft_lstat(t_list *lst, int index)
+t_list	ft_lstat(t_list lst, int index)
 {
 	size_t	i;
 	size_t	at;
 
 	i = ft_absi(index);
 	if ((int)i >= ft_lstsize(lst))
-		return (NULL);
+		return ((t_list){.list = NULL});
 	if (index < 0)
 		at = ft_lstsize(lst) + index;
 	else
 		at = index;
 	while (at--)
-		lst = lst->list.next;
+		lst.list = lst.list->next;
 	return (lst);
 }

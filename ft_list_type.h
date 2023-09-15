@@ -4,7 +4,7 @@
 typedef union __attribute((transparent_union)) u_list {
 	struct s_list {
 		void			*content;
-		union u_list	*next;
+		struct s_list	*next;
 	} *list;
 }	t_list;
 

@@ -13,10 +13,12 @@
 #ifndef FT_LIST_H
 # define FT_LIST_H
 
-# ifndef FT_LIST_CUSTOM_TYPE
-#  include "ft_list_type.h"
-# else
+# ifdef FT_LIST_CUSTOM_TYPE
+#  pragma message(FT_LIST_CUSTOM_TYPE)
 #  include FT_LIST_CUSTOM_TYPE
+# else
+#  pragma message("FT_LIST no custom type")
+#  include "ft_list_type.h"
 # endif
 # include <sys/types.h>
 # include <stdlib.h>

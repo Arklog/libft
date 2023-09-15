@@ -13,16 +13,15 @@
 #ifndef FT_BTREE_H
 # define FT_BTREE_H
 
+# ifdef FT_BTREE_CUSTOM_TYPE
+#  include FT_BTREE_CUSTOM_TYPE
+# endif
+# else
+#  include "ft_btree_type.h"
+# endif
 # include <sys/types.h>
-
-typedef u_int64_t	t_ft_btree_node_type;
-
-typedef struct ft_btree_node {
-	t_ft_btree_node_type	type;
-	void					*content;
-	struct ft_btree_node	*first;
-	struct ft_btree_node	*second;
-}	t_ft_btree_node;
+# include <unistd.h>
+# include <stdlib.h>
 
 /**
  * Create a new binary tree
@@ -65,5 +64,8 @@ void			ft_btree_foreach(t_ft_btree_node *tree,
  */
 void			ft_btree_foreachnd(t_ft_btree_node *tree,
 					void (*f)(t_ft_btree_node *));
+
+t_ft_btree_node	*ft_btree_dup(t_ft_btree_node *tree,
+					void *(*dup)(void *, t_ft_btree_node_type type));
 
 #endif

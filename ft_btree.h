@@ -15,7 +15,6 @@
 
 # ifdef FT_BTREE_CUSTOM_TYPE
 #  include FT_BTREE_CUSTOM_TYPE
-# endif
 # else
 #  include "ft_btree_type.h"
 # endif

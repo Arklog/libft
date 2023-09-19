@@ -22,5 +22,4 @@ void	ft_btree_delete(t_ft_btree_node *tree, void (*f)(void *))
 	if (tree->content)
 		f(tree->content);
 	free(tree);
-	return ;
 }

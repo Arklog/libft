@@ -12,6 +12,7 @@ t_ft_btree_node	*ft_btree_dup(t_ft_btree_node *tree,
 	if (!new)
 		return (NULL);
 	ft_memset(new, 0, sizeof(t_ft_btree_node));
+	new->type = tree->type;
 	if (tree->content)
 		new->content = dup(tree->content, tree->type);
 	new->first = ft_btree_dup(tree->first, dup);

@@ -1,5 +1,17 @@
-# include "ft_btree.h"
-# include "ft_string.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_btree_dup.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/11 16:00:29 by pducloux          #+#    #+#             */
+/*   Updated: 2023/10/11 16:00:52 by pducloux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_btree.h"
+#include "ft_string.h"
 
 t_ft_btree_node	*ft_btree_dup(t_ft_btree_node *tree,
 					void *(*dup)(void *content, t_ft_btree_node_type type))

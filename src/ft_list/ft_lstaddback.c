@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 00:04:02 by pierre            #+#    #+#             */
-/*   Updated: 2023/06/14 12:59:27 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/10/11 16:01:18 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	ft_lstaddback(t_list *lst, t_list new)
 	if (!last.list)
 		lst->list = new.list;
 	else
- 		last.list->next = new.list;
+		last.list->next = new.list;
 }

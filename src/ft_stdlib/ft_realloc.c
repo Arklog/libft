@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/12 13:59:54 by pducloux          #+#    #+#             */
+/*   Updated: 2023/10/12 14:00:04 by pducloux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_stdlib.h"
 #include "ft_string.h"
 
@@ -9,7 +21,6 @@ void	*ft_realloc(void *ptr, size_t old_size, size_t new_size)
 		return (malloc(new_size));
 	else if (!new_size)
 		return (free(ptr), NULL);
-
 	new_ptr = malloc(new_size);
 	if (!new_ptr)
 		return (NULL);

@@ -6,12 +6,14 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:15:35 by pierre            #+#    #+#             */
-/*   Updated: 2023/10/12 14:01:04 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:02:39 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STDLIB_H
 # define FT_STDLIB_H
+
+# include <sys/types.h>
 
 /**
  * Convert the initial portion of s into a long integer according to the

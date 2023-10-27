@@ -45,6 +45,15 @@ t_ft_btree_node	*ft_btree_add(t_ft_btree_node *parent, int first,
 void			ft_btree_delete(t_ft_btree_node *tree, void (*f)(void *));
 
 /**
+ * Delete the given node and all subsequent children, children are removed first.
+ *
+ * @param tree
+ * @param f
+ */
+void			ft_btree_delete_type(t_ft_btree_node *tree,
+					void (*f)(void *, t_ft_btree_node_type type));
+
+/**
  * Execute f on the type and content of each node of tree (including
  * the root), the nodes are passed from left to right and
  * the upper nodes will be passed first

@@ -12,6 +12,7 @@ SRC		:=	./src/ft_split.c\
 			./src/ft_ctype/ft_isalpha.c\
 			./src/ft_ctype/ft_isdigit.c\
 			./src/ft_ctype/ft_isspace.c\
+			./src/ft_btree/ft_btree_delete_type.c\
 			./src/ft_btree/ft_btree_foreach.c\
 			./src/ft_btree/ft_btree_dup.c\
 			./src/ft_btree/ft_btree_foreachnd.c\

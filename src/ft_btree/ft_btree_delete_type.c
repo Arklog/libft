@@ -12,5 +12,6 @@ void ft_btree_delete_type(t_ft_btree_node *tree, void (*del)(void *content, t_ft
 	ft_btree_delete_type(tree->second, del);
 	if (tree->content)
 		del(tree->content, tree->type);
+	free(tree->content);
 	free(tree);
 }

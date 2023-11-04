@@ -20,7 +20,7 @@ static bool	check_out_of_range(int neg, unsigned long long num, bool *error)
 	return (*error);
 }
 
-static int	ft_atoi_long(const char *str, bool *error)
+int	ft_atoi_long(const char *str, bool *error)
 {
 	unsigned long long	num;
 	int					neg;

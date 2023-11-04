@@ -16,6 +16,7 @@
 # include <sys/types.h>
 # include <limits.h>
 # include <stdbool.h>
+# include "ft_ctype.h"
 
 /**
  * Convert the initial portion of s into a long integer according to the
@@ -51,7 +52,7 @@ int		ft_atoi(char *str);
  * @return Returns the long integer. In case of error, sets an error boolean
  * to true.
  */
-static int	ft_atoi_long(const char *str, bool *error);
+int	ft_atoi_long(const char *str, bool *error);
 
 /**
  * @brief Return a new memory area of new_size bytes containing the first 

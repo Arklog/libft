@@ -1,6 +1,8 @@
 SRC		:=	./src/ft_split.c\
+			./src/ft_stdlib/ft_atoi_long.c\
 			./src/ft_stdlib/ft_strtol.c\
 			./src/ft_stdlib/ft_strtoi.c\
+			./src/ft_stdlib/ft_calloc.c\
 			./src/ft_stdlib/ft_realloc.c\
 			./src/ft_stdlib/ft_atoi.c\
 			./src/ft_splitcs.c\
@@ -12,6 +14,7 @@ SRC		:=	./src/ft_split.c\
 			./src/ft_ctype/ft_isalpha.c\
 			./src/ft_ctype/ft_isdigit.c\
 			./src/ft_ctype/ft_isspace.c\
+			./src/ft_ctype/ft_isalphanum.c\
 			./src/ft_btree/ft_btree_delete_type.c\
 			./src/ft_btree/ft_btree_foreach.c\
 			./src/ft_btree/ft_btree_dup.c\
@@ -20,14 +23,18 @@ SRC		:=	./src/ft_split.c\
 			./src/ft_btree/ft_btree_create.c\
 			./src/ft_string/ft_strchr1.c\
 			./src/ft_string/ft_countc.c\
+			./src/ft_string/ft_bzero.c\
 			./src/ft_string/ft_memmove.c\
 			./src/ft_string/ft_itoa.c\
+			./src/ft_string/ft_strlcpy.c\
 			./src/ft_string/ft_strremove.c\
 			./src/ft_string/ft_memelemset.c\
+			./src/ft_string/ft_substr.c\
 			./src/ft_string/ft_memcpy.c\
 			./src/ft_string/ft_strcpy.c\
 			./src/ft_string/ft_strdup.c\
 			./src/ft_string/ft_strcmp.c\
+			./src/ft_string/ft_strjoin.c\
 			./src/ft_string/ft_strreplace.c\
 			./src/ft_string/ft_strchr.c\
 			./src/ft_string/ft_strlen.c\

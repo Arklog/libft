@@ -18,8 +18,14 @@ char	*ft_strcat(const char *s1, const char *s2)
 	size_t	n2;
 	char	*new;
 
-	n1 = ft_strlen(s1);
-	n2 = ft_strlen(s2);
+	if (!s1)
+		n1 = 0;
+	else
+		n1 = ft_strlen(s1);
+	if (!s2)
+		n2 = 0;
+	else
+		n2 = ft_strlen(s2);
 	new = malloc(n1 + n2 + 1);
 	if (!new)
 		return (NULL);

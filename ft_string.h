@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/07/25 19:00:31 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/11/01 20:50:25 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -311,5 +311,52 @@ char	*ft_strreplace(const char *src, const char *begin,
  * @return			a statically allocated string or NULL on failure
 */
 char	*ft_itoa(int64_t val);
+
+/**
+ * concatenates the given strings s1 and s2 and allocates sufficient
+ * memory for the newly created string
+ * 
+ * @param s1	the string which to attach the second string
+ * @param s2	the string to attach to the first string
+ * 
+ * @return		A pointer to the new concatenated string
+ * 				NULL if the memory allocation fails
+ */
+char	*ft_strjoin(char const *s1, char const *s2);
+
+/**
+ * erases the data in the n bytes of the memory starting at the location 
+ * pointed to by s, by writing zeros (bytes containing '\0') to that area.
+ * 
+ * @param s		pointer to the location
+ * @param n		number of bytes that must be replaced by '\0'
+ * 
+ * @return		none
+*/
+void	ft_bzero(void *s, size_t n);
+
+/**
+ * Extracts a substring from the given string by allocating sufficient memory
+ * for the new string starting at index start and ending at len characters.
+ * 
+ * @param s		the string
+ * @param start the character the new string will start at
+ * @param len	len of the substracted string
+ * 
+ * @return		A pointer to the new string.
+ * 				NULL if the memory allocation fails.
+*/
+char	*ft_substr(char const *src, unsigned int start, size_t len);
+
+/**
+ * copies up to size - 1 characters from the given string src to the
+ * given string dst, nul-terminating the result.
+ * 
+ * @warning 	space for the terminating \0 character must be included in dstsize.
+ * 
+ * @return 		The total length of the string that it tried to create
+ * 				the length of src, with the goal to facilitate truncaction detection
+*/
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 #endif

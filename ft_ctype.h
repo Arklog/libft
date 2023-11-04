@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ctype.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:40:23 by pierre            #+#    #+#             */
-/*   Updated: 2023/08/01 19:32:09 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/11/01 20:49:31 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,10 @@ int		ft_isalphastr(const char *str);
  * Check if a given character is a space
 */
 int		ft_isspace(int c);
+
+/**
+ * Check if the character is an alphabetic char or a numeral
+ */
+int		ft_isalphanum(int c);
 
 #endif

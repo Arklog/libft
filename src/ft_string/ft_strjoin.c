@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_delete_type.c                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 20:51:25 by pducloux          #+#    #+#             */
-/*   Updated: 2023/11/01 20:52:14 by vtestut          ###   ########.fr       */
+/*   Created: 2023/11/01 20:53:45 by vtestut           #+#    #+#             */
+/*   Updated: 2023/11/01 20:53:52 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
+#include "ft_string.h"
+#include "ft_stdlib.h"
 
-void	ft_btree_delete_type(t_ft_btree_node *tree, void (*del)
-		(void *content, t_ft_btree_node_type type))
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (!tree)
-		return ;
-	ft_btree_delete_type(tree->first, del);
-	ft_btree_delete_type(tree->second, del);
-	if (tree->content)
-		del(tree->content, tree->type);
-	free(tree->content);
-	free(tree);
+	char	*s;
+	size_t	len;
+	int		i;
+
+	len = ft_strlen(s1) + ft_strlen(s2);
+	s = ft_calloc(len + 1, sizeof(char));
+	if (!s)
+		return (NULL);
+	len = 0;
+	while (s1[len])
+	{
+		s[len] = s1[len];
+		len++;
+	}
+	i = 0;
+	while (s2[i])
+	{
+		s[len + i] = s2[i];
+		i++;
+	}
+	return (s);
 }

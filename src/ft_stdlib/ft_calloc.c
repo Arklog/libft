@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_delete_type.c                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 20:51:25 by pducloux          #+#    #+#             */
-/*   Updated: 2023/11/01 20:52:14 by vtestut          ###   ########.fr       */
+/*   Created: 2023/11/01 20:54:15 by vtestut           #+#    #+#             */
+/*   Updated: 2023/11/01 20:54:19 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
+#include "ft_stdlib.h"
+#include "ft_string.h"
 
-void	ft_btree_delete_type(t_ft_btree_node *tree, void (*del)
-		(void *content, t_ft_btree_node_type type))
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (!tree)
-		return ;
-	ft_btree_delete_type(tree->first, del);
-	ft_btree_delete_type(tree->second, del);
-	if (tree->content)
-		del(tree->content, tree->type);
-	free(tree->content);
-	free(tree);
+	void	*r;
+
+	r = malloc(nmemb * size);
+	if (!r)
+		return (NULL);
+	ft_bzero(r, size * nmemb);
+	return (r);
 }

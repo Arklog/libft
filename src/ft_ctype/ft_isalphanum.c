@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_delete_type.c                             :+:      :+:    :+:   */
+/*   ft_isalphanum.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 20:51:25 by pducloux          #+#    #+#             */
-/*   Updated: 2023/11/01 20:52:14 by vtestut          ###   ########.fr       */
+/*   Created: 2023/11/01 20:52:36 by vtestut           #+#    #+#             */
+/*   Updated: 2023/11/01 20:52:48 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
+#include "ft_ctype.h"
 
-void	ft_btree_delete_type(t_ft_btree_node *tree, void (*del)
-		(void *content, t_ft_btree_node_type type))
+int	ft_isalphanum(int c)
 {
-	if (!tree)
-		return ;
-	ft_btree_delete_type(tree->first, del);
-	ft_btree_delete_type(tree->second, del);
-	if (tree->content)
-		del(tree->content, tree->type);
-	free(tree->content);
-	free(tree);
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (c);
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stdlib.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:15:35 by pierre            #+#    #+#             */
-/*   Updated: 2023/10/12 14:02:39 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:19:31 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FT_STDLIB_H
 
 # include <sys/types.h>
+# include <limits.h>
+# include <stdbool.h>
 
 /**
  * Convert the initial portion of s into a long integer according to the
@@ -42,6 +44,16 @@ int		ft_strtoi(const char *str, char **endptr, int base);
 int		ft_atoi(char *str);
 
 /**
+ * @brief Transforms a string of digits into a long integer.
+ * 
+ * @param str 
+ * @param error 
+ * @return Returns the long integer. In case of error, sets an error boolean
+ * to true.
+ */
+static int	ft_atoi_long(const char *str, bool *error);
+
+/**
  * @brief Return a new memory area of new_size bytes containing the first 
  * old_size bytes of ptr
  * 
@@ -59,5 +71,16 @@ int		ft_atoi(char *str);
  * @return The new memory area on success, NULL otherwise
  */
 void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
+
+/**
+ * allocates memory for an array of  nmemb  elements of size bytes each.
+ * The memory is set to zero
+ * 
+ * @param nmemb     the number of elements
+ * @param size
+ * 
+ * @return          a pointer to the allocated memory
+*/
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif

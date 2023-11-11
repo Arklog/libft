@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 17:30:57 by pducloux          #+#    #+#             */
-/*   Updated: 2023/06/30 21:29:00 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:13:23 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	*ft_strinsert(const char *str, const char *begin, const char *what)
 	new = malloc(strlen + wlen + 1);
 	if (!new)
 		return (NULL);
+	ft_memset(new, 0, strlen + wlen + 1);
 	ft_memcpy(new, str, begin - str);
 	ft_memcpy(new + (begin - str), what, wlen);
 	if (begin < str + ft_strlen(str))

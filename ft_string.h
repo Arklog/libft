@@ -279,6 +279,17 @@ char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strremove(const char *src, const char *begin, const char *end);
 
 /**
+ * Copy str and remove n characters starting from begin
+ *
+ * @param src		the original string
+ * @param begin		the starting index
+ * @param n			how many characters to remove
+ *
+ * @return		the new string or NULL on error
+ */
+char	*ft_strremoven(const char *src, size_t begin, size_t n);
+
+/**
  * Copy str and insert what into str after character begin
  * 
  * @param src		the original string
@@ -288,6 +299,17 @@ char	*ft_strremove(const char *src, const char *begin, const char *end);
  * @return			the new string on success or NULL on error
 */
 char	*ft_strinsert(const char *src, const char *begin, const char *what);
+
+/**
+ * Copy str and insert what into str after character begin
+ *
+ * @param src		the original string
+ * @param begin		the starting index
+ * @param what		the string to insert
+ *
+ * @return		the new string on success or NULL on error
+ */
+char 	*ft_strinsertn(const char *src, size_t begin, const char *what);
 
 /**
  * Copy str, remove the character between begin and end and insert

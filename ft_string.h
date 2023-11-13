@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/11/01 20:50:25 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/11/13 19:22:45 by pducloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -324,6 +324,9 @@ char 	*ft_strinsertn(const char *src, size_t begin, const char *what);
 */
 char	*ft_strreplace(const char *src, const char *begin,
 			const char *end, const char *what);
+
+char	*ft_strreplacen(const char *src, size_t begin,
+			size_t n, const char *what);
 
 /**
  * Get the string equivalent of val

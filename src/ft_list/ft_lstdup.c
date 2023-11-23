@@ -13,16 +13,30 @@
 #include "ft_list.h"
 #include "ft_string.h"
 
-t_list	ft_lstdup(t_list lst, void *(*dup)(void *))
+t_list	ft_lstdup(t_list lst, void *(*dup)(void *), void (*del)(void *))
 {
 	t_list	new;
+	t_list	tmp;
 	t_list	iter;
+	void	*content;
 
 	new = (t_list){.list = NULL};
 	iter = lst;
 	while (iter.list)
 	{
-		ft_lstaddback(&new, ft_lstnew(dup(iter.list->content)));
+		content = dup(iter.list->content);
+		if (!content)
+		{
+			ft_lstclear(new, del);
+			return ((t_list){.list = NULL});
+		}
+		tmp = ft_lstnew(dup(iter.list->content));
+		if (!tmp.list)
+		{
+			ft_lstclear(new, del);
+			return ((t_list){.list = NULL});
+		}
+		ft_lstaddback(&new, tmp);
 		iter.list = iter.list->next;
 	}
 	return (new);

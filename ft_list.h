@@ -123,6 +123,6 @@ int		ft_lstindex(t_list begin, t_list nd);
  * 
  * @return the duplicated list or NULL on failure
 */
-t_list	ft_lstdup(t_list lst, void *(*dup)(void *));
+t_list	ft_lstdup(t_list lst, void *(*dup)(void *), void (*del)(void *));
 
 #endif

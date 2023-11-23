@@ -74,6 +74,7 @@ void			ft_btree_foreachnd(t_ft_btree_node *tree,
 					void (*f)(t_ft_btree_node *));
 
 t_ft_btree_node	*ft_btree_dup(t_ft_btree_node *tree,
-					void *(*dup)(void *, t_ft_btree_node_type type));
+					void *(*dup)(void *, t_ft_btree_node_type),
+					void (del)(void *, t_ft_btree_node_type));
 
 #endif

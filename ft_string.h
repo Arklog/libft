@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/11/13 19:22:45 by pducloux         ###   ########.fr       */
+/*   Updated: 2023/11/28 14:41:56 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -309,7 +309,7 @@ char	*ft_strinsert(const char *src, const char *begin, const char *what);
  *
  * @return		the new string on success or NULL on error
  */
-char 	*ft_strinsertn(const char *src, size_t begin, const char *what);
+char	*ft_strinsertn(const char *src, size_t begin, const char *what);
 
 /**
  * Copy str, remove the character between begin and end and insert

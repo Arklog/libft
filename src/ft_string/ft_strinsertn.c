@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strinsertn.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/28 14:44:55 by pducloux          #+#    #+#             */
+/*   Updated: 2023/11/28 14:45:29 by vtestut          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_string.h"
 
-char *ft_strinsertn(const char *src, size_t begin, const char *what)
+char	*ft_strinsertn(const char *src, size_t begin, const char *what)
 {
 	char	*new;
 	size_t	srclen;

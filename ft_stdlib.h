@@ -6,7 +6,7 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:15:35 by pierre            #+#    #+#             */
-/*   Updated: 2023/11/02 17:19:31 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/11/28 14:41:24 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int		ft_atoi(char *str);
  * @return Returns the long integer. In case of error, sets an error boolean
  * to true.
  */
-int	ft_atoi_long(const char *str, bool *error);
+int		ft_atoi_long(const char *str, bool *error);
 
 /**
  * @brief Return a new memory area of new_size bytes containing the first 

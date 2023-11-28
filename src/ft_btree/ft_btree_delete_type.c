@@ -6,7 +6,7 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:51:25 by pducloux          #+#    #+#             */
-/*   Updated: 2023/11/01 20:52:14 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/11/24 15:45:35 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ void	ft_btree_delete_type(t_ft_btree_node *tree, void (*del)
 	ft_btree_delete_type(tree->second, del);
 	if (tree->content)
 		del(tree->content, tree->type);
-	free(tree->content);
 	free(tree);
 }

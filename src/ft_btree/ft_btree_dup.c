@@ -6,7 +6,7 @@
 /*   By: pducloux <pducloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:00:29 by pducloux          #+#    #+#             */
-/*   Updated: 2023/11/23 01:55:20 by pierre           ###   ########.fr       */
+/*   Updated: 2023/11/23 22:13:04 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ t_ft_btree_node	*ft_btree_dup(t_ft_btree_node *tree,
 	if (tree->content)
 		new->content = dup(tree->content, tree->type);
 	if (tree->content && !new->content)
-		return (ft_btree_delete_type(new, del), NULL);
+		return (ft_btree_delete_type(new, del), free(new), NULL);
 	new->first = ft_btree_dup(tree->first, dup, del);
 	if (tree->first && !new->first)
-		return (ft_btree_delete_type(new, del), NULL);
+		return (ft_btree_delete_type(new, del), free(new), NULL);
 	new->second = ft_btree_dup(tree->second, dup, del);
 	if (tree->first && !new->second)
-		return (ft_btree_delete_type(new, del), NULL);
+		return (ft_btree_delete_type(new, del), free(new), NULL);
 	return (new);
 }

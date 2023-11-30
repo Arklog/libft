@@ -384,4 +384,13 @@ char	*ft_substr(char const *src, unsigned int start, size_t len);
 */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
+/**
+ * Remove the character of set from the righmost and leftmost part of str
+ *
+ * @param str
+ * @param set
+ * @return		The number of removed characters
+ */
+int 	ft_strtrim(char *str, const char *set);
+
 #endif

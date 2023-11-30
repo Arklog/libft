@@ -22,14 +22,18 @@ SRC		:=	./src/ft_split.c\
 			./src/ft_btree/ft_btree_delete.c\
 			./src/ft_btree/ft_btree_create.c\
 			./src/ft_string/ft_strchr1.c\
+			./src/ft_string/ft_strreplacen.c\
 			./src/ft_string/ft_countc.c\
+			./src/ft_string/ft_strtrim.c\
 			./src/ft_string/ft_bzero.c\
 			./src/ft_string/ft_memmove.c\
 			./src/ft_string/ft_itoa.c\
+			./src/ft_string/ft_strremoven.c\
 			./src/ft_string/ft_strlcpy.c\
 			./src/ft_string/ft_strremove.c\
 			./src/ft_string/ft_memelemset.c\
 			./src/ft_string/ft_substr.c\
+			./src/ft_string/ft_strinsertn.c\
 			./src/ft_string/ft_memcpy.c\
 			./src/ft_string/ft_strcpy.c\
 			./src/ft_string/ft_strdup.c\

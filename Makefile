@@ -44,6 +44,7 @@ SRC		:=	./src/ft_split.c\
 			./src/ft_string/ft_strlen.c\
 			./src/ft_string/ft_strcat.c\
 			./src/ft_string/rotate.c\
+			./src/ft_string/ft_strtrim_one.c\
 			./src/ft_string/ft_memset.c\
 			./src/ft_string/ft_strinsert.c\
 			./src/ft_string/ft_strncpy.c\

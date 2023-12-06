@@ -19,8 +19,10 @@ int	ft_strtrim(char *str, const char *set)
 	size_t	n;
 
 	iter = str;
-	while (ft_strchr(set, *iter))
+	while (*iter && ft_strchr(set, *iter))
 		iter++;
+	if (!(*iter))
+		return ((int)(iter - str));
 	n = ft_strlen(iter);
 	removed = iter - str;
 	ft_memmove(str, iter, n + 1);

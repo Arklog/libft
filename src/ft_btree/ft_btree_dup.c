@@ -34,7 +34,7 @@ t_ft_btree_node	*ft_btree_dup(t_ft_btree_node *tree,
 	if (tree->first && !new->first)
 		return (ft_btree_delete_type(new, del), NULL);
 	new->second = ft_btree_dup(tree->second, dup, del);
-	if (tree->first && !new->second)
+	if (tree->second && !new->second)
 		return (ft_btree_delete_type(new, del), NULL);
 	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:29:09 by pierre            #+#    #+#             */
-/*   Updated: 2023/11/28 14:41:56 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/12/06 16:29:15 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -391,14 +391,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
  * @param set
  * @return		The number of removed characters
  */
-int 	ft_strtrim(char *str, const char *set);
+int		ft_strtrim(char *str, const char *set);
 
 /**
- * Remove the first character of set in str from the righmost and leftmost part of str
+ * Remove the first character of set in str from the righmost
+ * and leftmost part of str
  * @param str
  * @param set
  * @return 		The number of removed characters
  */
-int 	ft_strtrim_one(char *str, const char *set);
+int		ft_strtrim_one(char *str, const char *set);
 
 #endif

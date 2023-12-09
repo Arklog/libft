@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim_one.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierre </var/spool/mail/pierre>            +#+  +:+       +#+        */
+/*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:54:55 by pierre            #+#    #+#             */
-/*   Updated: 2023/11/30 15:54:55 by pierre           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:30:17 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strtrim_one(char *str, const char *set)
 {
-	char *iter;
-	char charset[2];
+	char	*iter;
+	char	charset[2];
 
 	charset[1] = 0;
 	iter = ft_strchr1(set, str);

@@ -17,5 +17,5 @@ int	ft_isspace(int c)
 {
 	static const char	*spaces = "\t\n\v\f\r ";
 
-	return (ft_strchr(spaces, c) != NULL);
+	return (c != 0 && ft_strchr(spaces, c) != NULL);
 }

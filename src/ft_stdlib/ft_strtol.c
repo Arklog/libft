@@ -59,7 +59,7 @@ long	ft_strtol(const char *s, char **endptr, int base)
 	strtol_init(&result, &incr, &s, &negative);
 	*endptr = (char *)s + ft_strlen(s) - 1;
 	result = ft_strchr(_base, *(*endptr--)) - _base;
-	while (s >= *endptr)
+	while (s <= *endptr)
 	{
 		if (incr > ((LONG_MAX + (negative == -1)) / base))
 			return (0);

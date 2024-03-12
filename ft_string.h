@@ -66,7 +66,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
  * @warning		str must be null terminated
  * @warning		str must not be null
  */
-char	*ft_strchr(const char *str, int c);
+char	*ft_strchr(const char *str, char c);
 
 /**
  * Find the first occurence of a character of charset in str
@@ -401,5 +401,21 @@ int		ft_strtrim(char *str, const char *set);
  * @return 		The number of removed characters
  */
 int		ft_strtrim_one(char *str, const char *set);
+
+/**
+ * Concatenate the buffers b1 and b2 in a new buffer of size s1 + s2,
+ * if b1 is NULL a new buffer of size s2 will be allocated and filled with b2,
+ * if b2 is NULL a new buffer of size s1 will be allocated and filled with b1. If both s1 and s2 are NULL,
+ * NULL will be returned. If nbuff is not NULL, the address of the new buffer will be stored in *nbuff.
+ *
+ * @param b1
+ * @param b2
+ * @param nbuff
+ * @param s1
+ * @param s2
+ *
+ * @return
+ */
+void	*ft_memcat(void *b1, void *b2, void **nbuff, size_t s1, size_t s2);
 
 #endif

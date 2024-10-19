@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.00)
 file(GLOB SRC src/**/*.c src/*.c)
 include_directories(./)
 
-add_library(ft ${SRC})
+add_library(ft ${SRC}
+        ft_dlist.h)
 target_compile_options(ft PRIVATE -g -Wall -Wextra -Werror)
 
 add_library(ft_asan ${SRC})
